@@ -1,0 +1,19 @@
+.new_product {
+  margin-bottom: 32px;
+}
+.new_product_inner {
+  display: flex;
+}
+
+.new_product_item {
+  flex: 1;
+  height: 194px;
+  position: relative;
+  background-color: #e7e7e7;
+}
+
+.new_product_link {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+}

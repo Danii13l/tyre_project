@@ -1,3 +1,5 @@
+@import "../../../styles/variables.module.scss";
+
 .navbar_inner {
   display: flex;
   justify-content: space-between;
@@ -66,13 +68,13 @@
         line-height: 20px;
         display: flex;
         align-items: center;
-        color: #bdbdbd;
+        color: $grey;
       }
     }
 
     .top_navbar_link {
       li:not(li:last-child) {
-        border-right: 2px solid #bdbdbd;
+        border-right: 2px solid $grey;
         padding-right: 15px;
         margin-right: 0;
       }
@@ -95,6 +97,7 @@
     border: 1px solid #000000;
     color: #fff;
     padding: 18px 11px;
+    min-width: 94px;
     .price {
       margin: 4px 0;
     }

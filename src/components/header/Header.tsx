@@ -7,6 +7,7 @@ import { Language } from "../language_select/Language";
 import Link from "next/link";
 import Image from "next/image";
 
+import variables from "../../../styles/variables.module.scss";
 import styles from "./header.module.scss";
 
 import logo from "../../images/common/logo.svg";

@@ -1,0 +1,45 @@
+.link_to {
+  position: absolute;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  span {
+    margin-left: 16px;
+  }
+}
+.small {
+  bottom: 32px;
+}
+
+.big {
+  bottom: 96px;
+
+  span {
+    display: none;
+  }
+
+  &.right {
+    right: 48px;
+  }
+
+  &.left {
+    left: 48px;
+  }
+}
+
+.right {
+  right: 32px;
+}
+
+.left {
+  left: 32px;
+}
+
+.white {
+  color: #fff;
+}
+.grey {
+  color: #bdbdbd;
+}
