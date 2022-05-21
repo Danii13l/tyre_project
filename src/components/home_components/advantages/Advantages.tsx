@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { Container } from "../../container/Container";
+import { Container } from "../../common_components/container/Container";
 
 import styles from "./advantages.module.scss";
 

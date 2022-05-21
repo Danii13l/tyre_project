@@ -7,8 +7,9 @@ import { Container } from "../container/Container";
 
 import styles from "./footer.module.scss";
 
-import logo from "../../images/common/logo.svg";
-import { socialImages, footerLinks } from "./../../constants/constFooter";
+import logo from "../../../images/common/logo.svg";
+
+import { socialImages, footerLinks } from "../../../constants/constFooter";
 
 export const Footer: FC = () => {
   return (

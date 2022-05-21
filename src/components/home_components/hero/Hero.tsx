@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Container } from "../../container/Container";
+import { Container } from "../../common_components/container/Container";
 
 import Slider from "react-slick";
 

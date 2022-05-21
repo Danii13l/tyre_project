@@ -1,0 +1,22 @@
+.tranding {
+  margin-bottom: 48px;
+}
+
+.tranding_inner {
+  display: flex;
+  justify-content: space-between;
+
+  div:first-child {
+    margin-right: 8px;
+  }
+
+  div:last-child {
+    margin-left: 8px;
+  }
+  div {
+    flex: 1;
+    height: 200px;
+    background: #f2f2f2;
+    position: relative;
+  }
+}

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { LinkTo } from "../../common_components/LinkTo/LinkTo";
 
-import { Container } from "../../container/Container";
+import { Container } from "../../common_components/container/Container";
 
 import styles from "./newProduct.module.scss";
 

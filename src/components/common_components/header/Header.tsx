@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Container } from "../container/Container";
 import { NavLink } from "../navlink/Navlink";
-import { Language } from "../language_select/Language";
+import { Language } from "../../language_select/Language";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -10,11 +10,14 @@ import Image from "next/image";
 import variables from "../../../styles/variables.module.scss";
 import styles from "./header.module.scss";
 
-import logo from "../../images/common/logo.svg";
-import search from "../../images/navbar/search.svg";
-import grocery from "../../images/navbar/local-grocery-store.svg";
+import logo from "../../../images/common/logo.svg";
+import search from "../../../images/navbar/search.svg";
+import grocery from "../../../images/navbar/local-grocery-store.svg";
 
-import { topNavbarLinks, bottomNavbarLinks } from "../../constants/constHeader";
+import {
+  topNavbarLinks,
+  bottomNavbarLinks,
+} from "../../../constants/constHeader";
 
 export const Header: FC = () => {
   return (
