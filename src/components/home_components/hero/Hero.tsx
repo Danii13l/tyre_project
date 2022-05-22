@@ -9,9 +9,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import pagin_grey from "../../../images/hero/Pagination__navigation-grey.png";
-import pagin_white from "../../../images/hero/Pagination__navigation-white.png";
 import { LinkTo } from "../../common_components/LinkTo/LinkTo";
+
+import pr from "../../../images/a.jpg";
 
 export const Hero: FC = () => {
   const settings = {
@@ -34,10 +34,10 @@ export const Hero: FC = () => {
   };
 
   return (
-    <div className={"hero"}>
+    <div className="hero">
       <Container>
-        <div className={"hero_inner"}>
-          <div className={"hero_main_item"}>
+        <div className="hero_inner">
+          <div className="hero_main_item">
             <Slider {...settings}>
               <div className="hero_main_item-slides">
                 <LinkTo
@@ -47,6 +47,8 @@ export const Hero: FC = () => {
                   color="grey"
                   text="КУПИТЬ СЕЙЧАС"
                 />
+
+                <Image src={pr} alt="s" layout="fill" />
               </div>
               <div className="hero_main_item-slides">
                 <LinkTo
@@ -59,7 +61,7 @@ export const Hero: FC = () => {
               </div>
             </Slider>
           </div>
-          <div className={"hero_second_item"}>
+          <div className="hero_second_item">
             <LinkTo
               href="#!"
               y="small"
@@ -68,7 +70,7 @@ export const Hero: FC = () => {
               text="КУПИТЬ СЕЙЧАС"
             />
           </div>
-          <div className={"hero_third_item"}>
+          <div className="hero_third_item">
             <LinkTo
               href="#!"
               y="small"
