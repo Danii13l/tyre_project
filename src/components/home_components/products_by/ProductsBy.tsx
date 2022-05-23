@@ -1,12 +1,10 @@
-import { isMapIterator } from "util/types";
-
 import { Container } from "../../common_components/container/Container";
 import { Rating } from "../../common_components/rating/Rating";
 
 import Image from "next/image";
 
 import styles from "./productsBy.module.scss";
-import imga from "../../../images/a.jpg";
+import imga from "../../../images/slide_examples/a.jpg";
 
 const data = [
   {

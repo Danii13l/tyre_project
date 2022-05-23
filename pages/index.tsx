@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 
+import { ModalProduct } from "../src/components/common_components/modal_product/ModalProduct";
+
 import { Advantages } from "../src/components/home_components/advantages/Advantages";
 import { ChooseProductBy } from "../src/components/home_components/choose_product_by/ChooseProductBy";
 import { Hero } from "../src/components/home_components/hero/Hero";
@@ -10,7 +12,7 @@ import { TrandingHome } from "../src/components/home_components/tranding_home/Tr
 
 const Home: NextPage = () => {
   return (
-    <>
+    <div className="home">
       <Hero />
       <Advantages />
       <NewProduct />
@@ -18,7 +20,7 @@ const Home: NextPage = () => {
       <SubCategory />
       <TrandingHome />
       <ProductsBy />
-    </>
+    </div>
   );
 };
 

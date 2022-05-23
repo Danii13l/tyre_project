@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { LinkTo } from "../../common_components/LinkTo/LinkTo";
 
-import pr from "../../../images/a.jpg";
+import pr from "../../../images/slide_examples/a.jpg";
 
 export const Hero: FC = () => {
   const settings = {
