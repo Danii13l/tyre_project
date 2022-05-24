@@ -5,6 +5,9 @@ import Slider from "react-slick";
 import { NextArrow } from "../../common_components/slider_arrow/NextArrow";
 import { PrevArrow } from "../../common_components/slider_arrow/PrevArrow";
 import { Rating } from "../../common_components/rating/Rating";
+import { ProductCard } from "../../common_components/product_card/ProductCard";
+
+import image from "../../../images/slide_examples/chair.jpg";
 
 const sliderItems = [
   {
@@ -14,6 +17,7 @@ const sliderItems = [
     rating: 3,
     discount: 5,
     new: true,
+    img: image,
   },
   {
     id: 2,
@@ -22,6 +26,7 @@ const sliderItems = [
     rating: 2,
     discount: null,
     new: false,
+    img: image,
   },
   {
     id: 3,
@@ -30,6 +35,7 @@ const sliderItems = [
     rating: 5,
     discount: 23,
     new: true,
+    img: image,
   },
   {
     id: 4,
@@ -38,6 +44,7 @@ const sliderItems = [
     rating: null,
     discount: null,
     new: false,
+    img: image,
   },
   {
     id: 5,
@@ -46,6 +53,7 @@ const sliderItems = [
     rating: null,
     discount: null,
     new: false,
+    img: image,
   },
   {
     id: 6,
@@ -54,6 +62,7 @@ const sliderItems = [
     rating: null,
     discount: null,
     new: true,
+    img: image,
   },
   {
     id: 7,
@@ -62,6 +71,7 @@ const sliderItems = [
     rating: null,
     discount: null,
     new: true,
+    img: image,
   },
 ];
 
@@ -100,27 +110,16 @@ export const SubCategory = () => {
             <Slider {...settings}>
               {sliderItems.map((slide) => {
                 return (
-                  <div className="sub_category__slide" key={slide.id}>
-                    <div className="sub_category__slide_top">
-                      {slide.discount && (
-                        <div className="sub_category__slide_discount">
-                          {slide.discount}% Скидка
-                        </div>
-                      )}
-                      {slide.new && (
-                        <div className="sub_category__slide_new">НОВИНКА</div>
-                      )}
-                      {slide.rating && (
-                        <div className="sub_category__slide_rating">
-                          <Rating num={slide.rating} />
-                        </div>
-                      )}
-                    </div>
-                    <div className="sub_category__slide_bottom">
-                      <p>{slide.text}</p>
-                      <h3>{slide.price} сум</h3>
-                    </div>
-                  </div>
+                  <ProductCard
+                    key={slide.id}
+                    discount={slide.discount}
+                    isNew={slide.new}
+                    rating={slide.rating}
+                    text={slide.text}
+                    price={slide.price}
+                    width="small"
+                    img={slide.img}
+                  />
                 );
               })}
             </Slider>

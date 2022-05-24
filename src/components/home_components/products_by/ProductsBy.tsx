@@ -1,7 +1,6 @@
 import { Container } from "../../common_components/container/Container";
-import { Rating } from "../../common_components/rating/Rating";
 
-import Image from "next/image";
+import { SubProduct } from "../../common_components/sub_product/SubProduct";
 
 import styles from "./productsBy.module.scss";
 import imga from "../../../images/slide_examples/a.jpg";
@@ -140,27 +139,14 @@ export const ProductsBy = () => {
                 <h5>{item.title}</h5>
                 {item.products.map((subitem) => {
                   return (
-                    <div key={subitem.id} className={styles.prodcut_by_subitem}>
-                      <div className={styles.prodcut_by_imgbox}>
-                        <Image src={subitem.img} alt="product" layout="fill" />
-                      </div>
-
-                      <div className={styles.prodcut_by_infobox}>
-                        <h6
-                          className={`${styles.prodcut_by_subtitle} ${
-                            subitem.rating ? styles.prodcut_by_norating : ""
-                          }`}
-                        >
-                          {subitem.title}
-                        </h6>
-                        <div className={styles.prodcut_by_rating}>
-                          {subitem.rating && <Rating num={subitem.rating} />}
-                        </div>
-                        <p className={styles.prodcut_by_price}>
-                          <span>{subitem.oldPrice}</span> {subitem.newPrice} сум
-                        </p>
-                      </div>
-                    </div>
+                    <SubProduct
+                      key={subitem.id}
+                      img={subitem.img}
+                      title={subitem.title}
+                      rating={subitem.rating}
+                      oldPrice={subitem.oldPrice}
+                      newPrice={subitem.newPrice}
+                    />
                   );
                 })}
               </div>

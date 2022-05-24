@@ -6,8 +6,6 @@ import { Language } from "../../language_select/Language";
 
 import Link from "next/link";
 import Image from "next/image";
-
-import variables from "../../../styles/variables.module.scss";
 import styles from "./header.module.scss";
 
 import logo from "../../../images/common/logo.svg";
@@ -67,7 +65,7 @@ export const Header: FC = () => {
                   {bottomNavbarLinks.map((links) => {
                     return (
                       <li key={links.name}>
-                        <NavLink href={links.href} exact={false}>
+                        <NavLink href={links.href} exact={true}>
                           {links.name}
                         </NavLink>
                       </li>

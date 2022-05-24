@@ -1,0 +1,15 @@
+.bread_crumbs {
+  display: flex;
+  align-items: center;
+
+  color: grey;
+  a {
+    color: grey;
+  }
+  span {
+    svg {
+      font-size: 18px;
+      margin-top: 4px;
+    }
+  }
+}

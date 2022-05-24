@@ -11,7 +11,7 @@ export const topNavbarLinks: navbarLinks[] = [
 
 export const bottomNavbarLinks: navbarLinks[] = [
   { href: "/", name: "Главная" },
-  { href: "!#", name: "Товары" },
+  { href: "/products", name: "Товары" },
   { href: "!#", name: "Новости" },
   { href: "!#", name: "О нас" },
   { href: "!#", name: "Контакты" },

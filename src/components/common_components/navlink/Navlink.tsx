@@ -11,6 +11,9 @@ interface navlinkProps {
 
 export const NavLink = ({ href, exact, children, ...props }: navlinkProps) => {
   const { pathname } = useRouter();
+
+  console.log(pathname);
+
   const isActive = exact ? pathname === href : pathname.startsWith(href);
 
   return (

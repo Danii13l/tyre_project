@@ -1,8 +1,6 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import { Container } from "../container/Container";
-
-import Image from "next/image";
 
 import Slider from "react-slick";
 
