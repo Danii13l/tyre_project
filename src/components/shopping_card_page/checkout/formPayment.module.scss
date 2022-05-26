@@ -1,0 +1,159 @@
+.form_payment {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.form {
+  flex: 1;
+  margin-right: 120px;
+
+  .select {
+    margin-bottom: 20px;
+  }
+
+  .input,
+  .textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 10px;
+    transition: 0.6s;
+    &:focus {
+      box-shadow: 0px 2px 10px 0px rgba(128, 128, 128, 0.558);
+      transform: translateY(-2px);
+    }
+  }
+
+  .textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  .inputs_wrapper {
+    display: flex;
+    .input {
+      flex: 1;
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .checkbox_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: grey;
+    input {
+      margin-right: 10px;
+    }
+  }
+}
+
+.confirmation {
+  flex: 1;
+
+  .agree {
+    display: flex;
+    justify-content: space-between;
+
+    width: 80%;
+    margin: 0 auto 30px;
+  }
+
+  .next_page_link {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.payment {
+  background-color: #e6e6e679;
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+
+  h4 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  .payment_items {
+    &:first-child {
+      margin-bottom: 50px;
+    }
+  }
+
+  .total_price {
+    font-size: 20px;
+  }
+}
+
+.total_wrapper {
+  .total_items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+    padding-bottom: 2px;
+  }
+
+  .total_items_product {
+    display: flex;
+    align-items: flex-end;
+    span {
+      font-size: 14px;
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+}
+
+.payment_method_wrapper {
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+  padding: 10px 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .payment_method_title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    position: relative;
+    label {
+      font-size: 16px;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      padding: 0.5em;
+      -webkit-appearance: none;
+      outline: 0.1em solid black;
+      outline-offset: 0.1em;
+    }
+
+    input[type="radio"]:checked {
+      display: inline-block;
+      background-color: #000;
+    }
+  }
+
+  .payment_method_text {
+    font-size: 0;
+
+    &.activePay {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+}

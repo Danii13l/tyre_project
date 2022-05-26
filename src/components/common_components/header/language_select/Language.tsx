@@ -5,7 +5,7 @@ import styles from "./language.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 
-import arrow from "../../images/navbar/select_arrow.svg";
+import arrow from "../../../../images/navbar/select_arrow.svg";
 
 export const Language = () => {
   const router = useRouter();

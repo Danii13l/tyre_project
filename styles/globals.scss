@@ -569,3 +569,15 @@ h6 {
     margin-right: -55px;
   }
 }
+
+//--------------------Custom Select----------------------------------------------
+.custom_select__control {
+  border: 1px solid grey !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+  padding: 2px 0;
+}
+
+.custom_select__single-value {
+  color: grey !important;
+}

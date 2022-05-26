@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Container } from "../container/Container";
 import { NavLink } from "../navlink/Navlink";
-import { Language } from "../../language_select/Language";
+import { Language } from "./language_select/Language";
 
 import Link from "next/link";
 import Image from "next/image";
