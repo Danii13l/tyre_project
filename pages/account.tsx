@@ -21,7 +21,7 @@ const Account: NextPage = () => {
   const [regOrChange, setRegOrChange] = useState<boolean>(false);
   const [number, setChangeNumber] = useState("");
 
-  const toggleButton = (num: any) => {
+  const toggleButton = (num: number) => {
     return () => setActiveButton(num);
   };
 

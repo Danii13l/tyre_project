@@ -1,8 +1,8 @@
-import fbook from "../images/footer/Facebook.svg";
-import inst from "../images/footer/Instagram.svg";
-import tg from "../images/footer/Telegram.svg";
-import wapp from "../images/footer/WhatsApp.svg";
-import youtube from "../images/footer/YouTube.svg";
+import fbook from "../images/social/Facebook.svg";
+import inst from "../images/social/Instagram.svg";
+import tg from "../images/social/Telegram.svg";
+import wapp from "../images/social/WhatsApp.svg";
+import youtube from "../images/social/YouTube.svg";
 
 import phone from "../images/footer/phone-enabled.svg";
 import location from "../images/footer/location-on.svg";

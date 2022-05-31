@@ -9,7 +9,8 @@ import styles from "./footer.module.scss";
 
 import logo from "../../../images/common/logo.svg";
 
-import { socialImages, footerLinks } from "../../../constants/constFooter";
+import { footerLinks } from "../../../constants/constFooter";
+import { social } from "../../../constants/constSocial";
 
 export const Footer: FC = () => {
   return (
@@ -30,7 +31,7 @@ export const Footer: FC = () => {
             </p>
 
             <div className={styles.footer_social_wrapper}>
-              {socialImages.map((link, index) => {
+              {social.map((link, index) => {
                 return (
                   <a href={link.href} key={link.id}>
                     <Image

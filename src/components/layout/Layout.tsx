@@ -12,9 +12,9 @@ export const Layout = ({ children }: StandardComponentProps) => {
       <Header />
       {children}
       <Footer />
-{/* 
-      <ModalProduct /> */}
-      {/* <ShoppingCardSidebar /> */}
+      {/* <ModalProduct /> */}
+
+      {/*  {/* <ShoppingCardSidebar /> */}
     </div>
   );
 };

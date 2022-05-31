@@ -1,0 +1,28 @@
+.title {
+  font-size: 40px;
+  margin: 40px 0;
+}
+
+.author_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.img_wrapper {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  height: 500px;
+  position: relative;
+}
+
+.info_wrapper {
+  .subtitle {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
