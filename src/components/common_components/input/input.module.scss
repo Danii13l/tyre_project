@@ -1,0 +1,73 @@
+.select {
+  margin-bottom: 20px;
+}
+
+.label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 10px;
+  transition: 0.6s;
+  font-size: 16px;
+  &:focus {
+    box-shadow: 0px 2px 10px 0px rgba(128, 128, 128, 0.558);
+    transform: translateY(-2px);
+  }
+}
+
+.textarea {
+  resize: none;
+  height: 100px;
+}
+
+.button {
+  width: 100px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.input_password_wrapper {
+  position: relative;
+  input {
+    padding: 10px 40px 10px 10px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid grey;
+  }
+
+  svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+  }
+}
+
+.input_number_wrapper {
+  position: relative;
+
+  input {
+    padding-left: 55px;
+  }
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: grey;
+  }
+}

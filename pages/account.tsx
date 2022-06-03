@@ -5,9 +5,10 @@ import styles from "../styles/pages/account/account.module.scss";
 import { ChangeEvent, MouseEventHandler, useState } from "react";
 
 import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
-import { PhoneInput } from "../src/components/account_page/PhoneInput";
-import { AccountButton } from "./../src/components/account_page/AccountButton";
+import { PhoneInput } from "../src/components/account_page_components/PhoneInput";
+import { AccountButton } from "../src/components/account_page_components/AccountButton";
 import Link from "next/link";
+import { InputPrimary } from "../src/components/common_components/input/InputPrimary";
 
 const buttons = [
   { id: 1, text: "Войти" },
@@ -25,7 +26,7 @@ const Account: NextPage = () => {
     return () => setActiveButton(num);
   };
 
-  const togglePasswort = (ev: any) => {
+  const togglePasswort = () => {
     setShowPassword(!showPassword);
   };
 
@@ -89,15 +90,12 @@ const Account: NextPage = () => {
                 changeNumber={handleNumber}
               />
               <div className={styles.input_wrapper}>
-                <label htmlFor="tel">Пароль</label>
-                <div className={styles.input_password_wrapper}>
-                  <input type={showPassword ? "text" : "password"} />
-                  {showPassword ? (
-                    <RiEyeLine onClick={togglePasswort} />
-                  ) : (
-                    <RiEyeCloseLine onClick={togglePasswort} />
-                  )}
-                </div>
+                <InputPrimary
+                  type="password"
+                  name="password"
+                  labelFor="password"
+                  labelText="Пароль"
+                />
                 <p className={styles.error}>Обязательное поле</p>
               </div>
 

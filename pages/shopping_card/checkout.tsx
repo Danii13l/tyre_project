@@ -5,9 +5,9 @@ import { Container } from "../../src/components/common_components/container/Cont
 import { BreadCrumbs } from "./../../src/components/common_components/bread_crumbs/BreadCrumbs";
 
 import styles from "../../styles/pages/shopping_card_pages/checkout.module.scss";
-import { ShoppingCardOrder } from "../../src/components/shopping_card_page/shopping_card_order/ShoppingCardOrder";
+import { ShoppingCardOrder } from "../../src/components/shopping_card_page_components/shopping_card_order/ShoppingCardOrder";
 import { useRouter } from "next/router";
-import { FormPayment } from "../../src/components/shopping_card_page/checkout/FormPayment";
+import { FormPayment } from "../../src/components/shopping_card_page_components/checkout/FormPayment";
 
 const Checkout: NextPage = () => {
   const a = useRouter();

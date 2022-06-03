@@ -99,8 +99,8 @@ const Products: NextPage = () => {
           </aside>
           <div className={styles.content}>
             <Controller />
-            <ListView data={dataServer} />
-            {/* <GridView data={dataServer} /> */}
+            {/* <ListView data={dataServer} /> */}
+            <GridView data={dataServer} />
           </div>
         </div>
       </Container>

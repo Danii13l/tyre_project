@@ -13,8 +13,8 @@ export const Layout = ({ children }: StandardComponentProps) => {
       {children}
       <Footer />
       {/* <ModalProduct /> */}
-
-      {/*  {/* <ShoppingCardSidebar /> */}
+      {/* 
+      <ShoppingCardSidebar /> */}
     </div>
   );
 };

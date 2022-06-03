@@ -1,0 +1,113 @@
+.top_buttons {
+  display: flex;
+}
+
+.button {
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin-right: 5px;
+  background-color: transparent;
+  border: 1px solid grey;
+  &.active {
+    background-color: grey;
+    color: #fff;
+  }
+}
+
+.image_wrapper {
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.setting_inner {
+  padding: 20px;
+}
+
+// change settings
+
+.change_form {
+  max-width: 500px;
+  input {
+    margin-bottom: 15px;
+  }
+}
+
+.change_title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.put_photo_wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.put_photo_img_wrapper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.file_input {
+  display: none;
+}
+
+.buttons_photo_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.buttons_photo {
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(185, 185, 185, 0.954);
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.change_inputs_label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.change_inputs {
+  display: block;
+  border: 1px solid gray;
+  padding: 10px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+}
+
+.change_password_title {
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+
+.password_wrapper {
+  display: flex;
+  input {
+    flex: 1 !important;
+  }
+  span {
+    margin: 0 5px;
+  }
+}

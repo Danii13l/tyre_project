@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  transition: 0.7s;
+  color: grey;
+  &:hover {
+    box-shadow: 0px 0px 30px 1px rgba(128, 128, 128, 0.303);
+  }
+}
+
+.img_box {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 20px;
+}

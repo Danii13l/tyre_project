@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "./accountComp.module.scss";
+import { InputPrimary } from "./../common_components/input/InputPrimary";
 
 interface PhoneInputInt {
   sms: boolean;
@@ -17,15 +18,7 @@ export const PhoneInput = ({
     <>
       <div className={styles.input_wrapper}>
         <label htmlFor="tel">Введите номер телефона </label>
-        <div className={styles.input_number_wrapper}>
-          <input
-            maxLength={12}
-            type="tel"
-            value={valueNumber}
-            onChange={changeNumber}
-          />
-          <div>+998</div>
-        </div>
+        <InputPrimary type="tel" name="tel" />
         <p className={styles.error}>Неверный формат</p>
       </div>
 
