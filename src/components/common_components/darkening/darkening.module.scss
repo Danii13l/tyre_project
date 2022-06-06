@@ -1,0 +1,9 @@
+@import "../../../../styles/mixins.module.scss";
+
+.dark {
+  @include width_height(100%, 100%);
+
+  img {
+    filter: brightness(85%);
+  }
+}

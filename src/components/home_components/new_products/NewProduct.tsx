@@ -1,49 +1,56 @@
 import { FC } from "react";
-import { LinkTo } from "../../common_components/LinkTo/LinkTo";
 
+import { LinkTo } from "../../common_components/LinkTo/LinkTo";
 import { Container } from "../../common_components/container/Container";
+import { Darkening } from "../../common_components/darkening/Darkening";
 
 import styles from "./newProduct.module.scss";
 
 interface newProductInt {
   id: number;
   href: string;
-  img: string;
+  img: string | StaticImageData;
+  text: string;
 }
+
+import malibu from "../../../images/fake_photo/malibu.jpg";
+import gentra from "../../../images/fake_photo/gentra.jpg";
+import spark from "../../../images/fake_photo/spark.jpg";
+import Image, { StaticImageData } from "next/image";
 
 const newProductItems: newProductInt[] = [
   {
     id: 1,
     href: "#!",
-    img: "",
+    img: malibu,
+    text: "MALIBU",
   },
   {
     id: 2,
     href: "#!",
-    img: "",
+    img: gentra,
+    text: "GENTRA",
   },
   {
     id: 3,
     href: "#!",
-    img: "",
+    img: spark,
+    text: "SPARK",
   },
 ];
 
-export const NewProduct: FC = () => {
+export const NewProduct: FC = (): JSX.Element => {
   return (
     <div className={styles.new_product}>
       <Container>
         <div className={styles.new_product_inner}>
-          {newProductItems.map((item) => {
+          {newProductItems.map(({ id, href, img, text }) => {
             return (
-              <div key={item.id} className={styles.new_product_item}>
-                <LinkTo
-                  href="#!"
-                  text="ПОДРОБНЕЕ"
-                  y="small"
-                  x="left"
-                  color="grey"
-                />
+              <div key={id} className={styles.new_product_item}>
+                <Darkening>
+                  <LinkTo href="#!" text={text} y="small" x="right" />
+                  <Image src={img} alt="car" layout="fill" objectFit="cover" />
+                </Darkening>
               </div>
             );
           })}

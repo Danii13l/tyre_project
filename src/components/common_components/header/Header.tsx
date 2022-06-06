@@ -61,7 +61,7 @@ export const Header: FC = () => {
                   </ul>
                 </div>
 
-                <ul>
+                <ul className={styles.bottom_navbar_link}>
                   {bottomNavbarLinks.map((links) => {
                     return (
                       <li key={links.name}>

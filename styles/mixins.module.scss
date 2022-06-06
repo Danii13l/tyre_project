@@ -1,0 +1,25 @@
+@mixin fsize_lheight_fwieght_color($fs, $lh, $fw, $col) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  color: $col;
+}
+
+@mixin dflex_jcontent_aitems($jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin pos_absolute($top, $left, $bott, $right) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  bottom: $bott;
+  right: $right;
+}
+
+@mixin width_height($w, $h) {
+  width: $w;
+  height: $h;
+}

@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
+
+@import "./variables.module.scss";
+@import "./mixins.module.scss";
+
 * {
   padding: 0;
   margin: 0;
@@ -27,14 +31,11 @@ aside {
 }
 html,
 body {
-  background-color: #fff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   height: 100%;
   width: 100%;
-  font-size: 100%;
   font-size: 16px;
   line-height: 20px;
-  line-height: 1;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -294,6 +295,23 @@ h6 {
   font-size: 20px;
   cursor: pointer;
 }
+
+// --------
+// slider custom arrows
+.slider_arrow {
+  @include pos_absolute(-60px, auto, auto, 0);
+  background: $light;
+}
+.slider_arrow-next {
+  border-radius: 0 50px 50px 0;
+  padding: 4px 8px 0px 2px;
+}
+.slider_arrow-prev {
+  right: 43px;
+  border-radius: 50px 0 0 50px;
+  padding: 4px 2px 0px 8px;
+}
+
 // ------------------------------------------------------------------------------------------------Home---------------------------------------------------------------------------------------------------
 // home
 .home {
@@ -317,36 +335,30 @@ h6 {
   grid-column: span 2;
   grid-row: span 2;
   position: relative;
-  background-color: #707070;
   overflow-x: hidden;
 
   div {
-    width: 100%;
-    height: 100%;
+    @include width_height(100%, 100%);
   }
-  .slick-dots {
-    position: absolute;
-    bottom: 48px;
-    left: 48px;
 
+  .slick-dots {
+    @include pos_absolute(auto, 48px, 48px, auto);
     display: flex !important;
-    max-width: 300px;
+
     button::before {
       color: rgba(255, 255, 255, 0);
     }
 
     button {
       border-radius: 50%;
-      border: 1px solid #bdbdbd;
-      width: 16px;
-      height: 16px;
+      border: 1px solid $white;
+      @include width_height(16px, 16px);
     }
 
     .slick-active {
-      background-color: #bdbdbd;
+      background-color: $white;
       border-radius: 50%;
-      width: 16px;
-      height: 16px;
+      @include width_height(16px, 16px);
     }
 
     .slick-active button::before {
@@ -355,78 +367,26 @@ h6 {
   }
 }
 
-.hero_main_item {
-  .hero_main_item-slides {
-    position: relative;
-    .hero_link {
-      position: absolute;
-      bottom: 96px;
-      left: 48px;
-      display: flex;
-      align-items: center;
-      color: #707070;
-      font-size: 20px;
-      line-height: 20px;
-      span {
-        margin-left: 16px;
-      }
-    }
-  }
-}
-
-.hero_second_item,
-.hero_third_item {
+.hero_main_item-slides {
   position: relative;
-  .hero_link {
-    position: absolute;
-    bottom: 37px;
-    right: 32px;
-    display: flex;
-    align-items: center;
-
-    font-size: 20px;
-    line-height: 20px;
-    span {
-      margin-left: 16px;
-    }
-  }
 }
 
 .hero_second_item {
+  position: relative;
   height: 200px;
   grid-column: 3/4;
-  background-color: pink;
-  .hero_link {
-    color: #fff;
-  }
 }
 
 .hero_third_item {
+  position: relative;
   height: 270px;
-  background-color: blue;
   grid-column: -2/-1;
-  .hero_link {
-    color: #bdbdbd;
-  }
 }
 
-// --------
-// slider custom arrows
-.slider_arrow {
-  position: absolute;
-  top: -60px;
-  right: 0;
-  background: #f2f2f2;
-}
-.slider_arrow-next {
-  padding: 4px 8px 4px 2px;
-  border-radius: 0 100px 100px 0;
-}
-.slider_arrow-prev {
-  right: 43px;
-  transform: rotate(180deg);
-  padding: 4px 8px 4px 2px;
-  border-radius: 0 100px 100px 0;
+.hero_subtitles {
+  z-index: 1;
+  @include pos_absolute(32px, 32px, auto, auto);
+  @include fsize_lheight_fwieght_color(24px, 33px, 700, $white);
 }
 
 // --------
@@ -434,7 +394,6 @@ h6 {
 
 .choose_product_by {
   position: relative;
-
   margin-bottom: 32px;
 }
 
@@ -450,12 +409,9 @@ h6 {
   button {
     background-color: transparent;
     margin-right: 10px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
-    color: #bdbdbd;
+    @include fsize_lheight_fwieght_color(20px, 20px, 600, $text2);
     padding: 14px 32px;
-    border-right: 1px solid #bdbdbd;
+    border-right: 2px solid $text2;
   }
 
   button:first-child {
@@ -467,15 +423,11 @@ h6 {
   }
 
   button.active {
-    color: #4f4f4f;
+    color: $accent;
   }
 }
 
 .choose_product_by__slides {
-  .slider_arrow {
-    top: -60px;
-  }
-
   .slick-list {
     margin-right: -70px;
   }
@@ -485,42 +437,7 @@ h6 {
   cursor: pointer;
   height: 382px;
   max-width: 292px;
-  position: relative;
   background-color: #f3f3f3;
-  padding: 16px;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-end !important;
-}
-
-.choose_product_by__slide-discount {
-  position: absolute;
-  padding: 8px;
-  background: #bdbdbd;
-  top: 48px;
-  color: #ffffff;
-  left: 0;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 24px;
-}
-
-.choose_product_by__slide-reting {
-  margin-bottom: 8px;
-}
-
-.choose_product_by__slide-text {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 20px;
-  color: #707070;
-  margin-bottom: 8px;
-}
-
-.choose_product_by__slide-price {
-  font-size: 24px;
-  line-height: 20px;
-  color: #333333;
 }
 
 // --------
@@ -541,33 +458,27 @@ h6 {
 .sub_category__title_wrapper {
   border-left: 16px solid #f3f3f3;
   padding: 19px 0 19px 16px;
-
+  text-transform: uppercase;
   h2 {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: #333333;
+    @include fsize_lheight_fwieght_color(32px, 44px, 600, $accent);
     margin-bottom: 8px;
   }
 
   p {
-    font-size: 20px;
-    line-height: 20px;
     letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #bdbdbd;
+    @include fsize_lheight_fwieght_color(20px, 27px, 600, $text2);
   }
 }
 
 .sub_category__slider {
-  // .slider_arrow {
-  //   top: -60px;
-  // }
-
   .slick-list {
-    margin-right: -55px;
+    margin-right: -40px;
   }
+}
+
+.sub_category__slide {
+  @include width_height(230px, 314px);
+  width: 239px !important;
 }
 
 //--------------------Custom Select----------------------------------------------

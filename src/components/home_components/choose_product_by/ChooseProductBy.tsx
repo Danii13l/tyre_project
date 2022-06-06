@@ -1,62 +1,108 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
 import { Container } from "../../common_components/container/Container";
 import { NextArrow } from "./../../common_components/slider_arrow/NextArrow";
 import { PrevArrow } from "./../../common_components/slider_arrow/PrevArrow";
+import { BigCard } from "./../../common_components/big_card/BigCard";
 
 import Slider from "react-slick";
-import { Rating } from "./../../common_components/rating/Rating";
 
 interface buttonsInt {
   id: number;
   text: string;
 }
 
-const buttons = [
+const buttons: buttonsInt[] = [
   { id: 1, text: "ПОПУЛЯРНОЕ" },
   { id: 2, text: "НОВИНКИ" },
   { id: 3, text: "ПОПУЛЯРНОЕ" },
 ];
 
-const sliderItems = [
+import china from "../../../images/fake_photo/HU.png";
+import balloon2 from "../../../images/fake_photo/balloon2.png";
+
+const fakeData = [
   {
     id: 1,
-    text: "Стол из массива",
-    price: "2 000",
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: china,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
+    discount: 23,
+    isNew: false,
+    mainImg: balloon2,
     rating: 3,
-    discount: 5,
+    price: "2 500 000",
+  },
+  {
+    id: 1,
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: china,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
+    discount: 23,
+    isNew: true,
+    mainImg: balloon2,
+    rating: 3,
+    price: "2 500 000",
   },
   {
     id: 2,
-    text: "Стол из массива ореха ",
-    price: "500 000",
-    rating: 2,
-    discount: null,
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: china,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
+    discount: 23,
+    isNew: false,
+    mainImg: balloon2,
+    rating: 3,
+    price: "2 500 000",
   },
   {
     id: 3,
-    text: "Стол из массива ореха",
-    price: "12 220 000",
-    rating: 5,
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: china,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
     discount: 23,
+    isNew: false,
+    mainImg: balloon2,
+    rating: 3,
+    price: "2 500 000",
   },
   {
     id: 4,
-    text: "Стол из массива ореха",
-    price: "20 000",
-    rating: null,
-    discount: null,
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: china,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
+    discount: 23,
+    isNew: false,
+    mainImg: balloon2,
+    rating: 3,
+    price: "2 500 000",
   },
   {
     id: 5,
-    text: "Стол из массива ореха",
-    price: "300 000",
-    rating: null,
-    discount: null,
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: china,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
+    discount: 23,
+    isNew: true,
+    mainImg: balloon2,
+    rating: 3,
+    price: "2 500 000",
   },
 ];
 
-export const ChooseProductBy = () => {
+export const ChooseProductBy: FC = (): JSX.Element => {
   const [activeButton, setAvtiveButton] = useState<number>(1);
 
   const handleActiveButton = (ev: any) => {
@@ -70,7 +116,7 @@ export const ChooseProductBy = () => {
     slidesToScroll: 4,
     initialSlide: 0,
     arrows: true,
-    infinite: true,
+    infinite: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     // responsive: [
@@ -105,21 +151,10 @@ export const ChooseProductBy = () => {
 
           <div className="choose_product_by__slides">
             <Slider {...settings}>
-              {sliderItems.map((item) => {
+              {fakeData.map((item) => {
                 return (
                   <div key={item.id} className="choose_product_by__slide">
-                    {item.discount && (
-                      <div className="choose_product_by__slide-discount">
-                        {item.discount}% Скидка
-                      </div>
-                    )}
-                    <div className="choose_product_by__slide-reting">
-                      {item.rating && <Rating num={item.rating} />}
-                    </div>
-                    <p className="choose_product_by__slide-text">{item.text}</p>
-                    <h5 className="choose_product_by__slide-price">
-                      {item.price} сум
-                    </h5>
+                    <BigCard {...item} />
                   </div>
                 );
               })}

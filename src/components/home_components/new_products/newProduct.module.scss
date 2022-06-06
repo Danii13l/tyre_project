@@ -1,3 +1,5 @@
+@import "../../../../styles/mixins.module.scss";
+
 .new_product {
   margin-bottom: 32px;
 }
@@ -7,13 +9,11 @@
 
 .new_product_item {
   flex: 1;
-  height: 194px;
+  height: 200px;
   position: relative;
   background-color: #e7e7e7;
 }
 
 .new_product_link {
-  position: absolute;
-  left: 32px;
-  bottom: 32px;
+  @include pos_absolute(auto, 32px, 32px, auto);
 }
