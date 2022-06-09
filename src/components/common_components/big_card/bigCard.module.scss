@@ -2,11 +2,12 @@
 @import "../../../../styles/mixins.module.scss";
 
 .big_card {
-  @include width_height(100%, 100%);
-  background: #f9f9f9;
+  max-width: 292px;
+  height: 382px;
   position: relative;
   display: flex;
   flex-direction: column;
+  background: #f9f9f9;
 }
 
 .big_card_top {
@@ -26,6 +27,9 @@
 .country_season_wrapper {
   display: flex;
   margin-bottom: auto;
+  & > div {
+    margin-right: 8px;
+  }
 }
 
 .country_wrapper,
@@ -46,17 +50,18 @@
 
 .main_img_wrapper {
   @include width_height(160px, 160px);
-  @include pos_absolute(auto, 50%, 70px, auto);
+  @include pos_absolute(auto, 50%, 65px, auto);
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .rating_price_wrapper {
   margin-top: auto;
   @include dflex_jcontent_aitems(center, center);
   flex-direction: column;
-  background-color: $white;
-  height: 90px;
-  border-radius: 50% 50% 0 0;
+  padding: 30px 0 22px;
+  z-index: 3;
+  border-radius: 47% 30px 0 0;
 }
 
 .isNew {
@@ -64,7 +69,7 @@
   padding: 8px;
   @include fsize_lheight_fwieght_color(16px, 18px, 700, $white);
   background-color: $accent;
-  z-index: 2;
+  z-index: 3;
 }
 
 .discount {
@@ -72,9 +77,15 @@
   padding: 8px;
   @include fsize_lheight_fwieght_color(18px, 20px, 700, $white);
   background-color: $accent2;
-  z-index: 2;
+  z-index: 3;
 }
 
 .price {
   @include fsize_lheight_fwieght_color(24px, 20px, 600, $accent);
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  bottom: -4px;
 }

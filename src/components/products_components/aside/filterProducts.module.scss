@@ -1,0 +1,73 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
+.filter_products {
+  width: 330px;
+}
+
+.title {
+  @include fsize_lheight_fwieght_color(24px, 24px, 400, $accent);
+  margin-bottom: 40px;
+}
+
+.filter_selects_wrapper {
+  background-color: $light;
+  padding: 16px;
+  border-radius: 6px;
+  .filter_select_wrapper:last-child {
+    margin-bottom: 0;
+  }
+  margin-bottom: 16px;
+}
+
+.filter_select_wrapper {
+  margin-bottom: 16px;
+}
+
+.select_index_loading_label {
+  @include fsize_lheight_fwieght_color(14px, 19px, 400, $text2);
+  display: block;
+  margin-bottom: 4px;
+}
+.select_index_loading {
+  @include dflex_jcontent_aitems(space-between, center);
+  & > div {
+    flex: 1;
+  }
+  & > div:first-child {
+    margin-right: 13px;
+    position: relative;
+    &::after {
+      content: "";
+      @include width_height(5px, 2px);
+      background: $accent;
+      @include pos_absolute(50%, 103%, auto, auto);
+    }
+  }
+}
+
+.select_price {
+  @include dflex_jcontent_aitems(space-between, center);
+
+  input {
+    background: #f2f2f2;
+    padding: 0px 15px;
+    width: 120px;
+    height: 38px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+
+    @include fsize_lheight_fwieght_color(14px, 19px, 400, $accent);
+
+    &::placeholder {
+      @include fsize_lheight_fwieght_color(14px, 19px, 400, $accent);
+    }
+  }
+  span {
+    display: block;
+    font-size: 20px;
+  }
+
+  margin-bottom: 24px;
+}

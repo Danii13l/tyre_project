@@ -79,6 +79,7 @@
 
   .price_box {
     margin-left: 40px;
+    position: relative;
     @include dflex_jcontent_aitems(center, center);
     flex-direction: column;
     background: $accent;
@@ -90,5 +91,15 @@
     .price {
       margin: 6px 0 0;
     }
+  }
+
+  .price_amount {
+    @include pos_absolute(10px, auto, auto, 27px);
+    font-size: 10px;
+    @include width_height(16px, 16px);
+    background: #f15050;
+    padding: 4px 6px;
+    border-radius: 100px;
+    @include dflex_jcontent_aitems(center, center);
   }
 }

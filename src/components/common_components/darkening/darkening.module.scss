@@ -2,8 +2,10 @@
 
 .dark {
   @include width_height(100%, 100%);
-
-  img {
-    filter: brightness(85%);
-  }
+  @include pos_absolute(0, 0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
 }

@@ -18,7 +18,9 @@ const buttons: buttonsInt[] = [
   { id: 3, text: "ПОПУЛЯРНОЕ" },
 ];
 
+// fake
 import china from "../../../images/fake_photo/HU.png";
+import season from "../../../images/fake_photo/seasons.svg";
 import balloon2 from "../../../images/fake_photo/balloon2.png";
 
 const fakeData = [
@@ -29,6 +31,7 @@ const fakeData = [
     countryImg: china,
     countryName: "Венгрия",
     seasonName: "Всесезонные",
+    seasonImg: season,
     discount: 23,
     isNew: false,
     mainImg: balloon2,
@@ -42,6 +45,7 @@ const fakeData = [
     countryImg: china,
     countryName: "Венгрия",
     seasonName: "Всесезонные",
+    seasonImg: season,
     discount: 23,
     isNew: true,
     mainImg: balloon2,
@@ -55,6 +59,7 @@ const fakeData = [
     countryImg: china,
     countryName: "Венгрия",
     seasonName: "Всесезонные",
+    seasonImg: season,
     discount: 23,
     isNew: false,
     mainImg: balloon2,
@@ -68,6 +73,7 @@ const fakeData = [
     countryImg: china,
     countryName: "Венгрия",
     seasonName: "Всесезонные",
+    seasonImg: season,
     discount: 23,
     isNew: false,
     mainImg: balloon2,
@@ -81,6 +87,7 @@ const fakeData = [
     countryImg: china,
     countryName: "Венгрия",
     seasonName: "Всесезонные",
+    seasonImg: season,
     discount: 23,
     isNew: false,
     mainImg: balloon2,
@@ -94,6 +101,7 @@ const fakeData = [
     countryImg: china,
     countryName: "Венгрия",
     seasonName: "Всесезонные",
+    seasonImg: season,
     discount: 23,
     isNew: true,
     mainImg: balloon2,

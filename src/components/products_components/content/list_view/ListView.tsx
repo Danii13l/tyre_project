@@ -1,5 +1,5 @@
 import styles from "./listView.module.scss";
-import { Rating } from "../../common_components/rating/Rating";
+import { Rating } from "../../../common_components/rating/Rating";
 
 import Image from "next/image";
 

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { LinkTo } from "../../common_components/LinkTo/LinkTo";
+import { LinkTo } from "../../common_components/link_to/LinkTo";
 import { Container } from "../../common_components/container/Container";
 import { Darkening } from "../../common_components/darkening/Darkening";
 
@@ -47,10 +47,11 @@ export const NewProduct: FC = (): JSX.Element => {
           {newProductItems.map(({ id, href, img, text }) => {
             return (
               <div key={id} className={styles.new_product_item}>
-                <Darkening>
-                  <LinkTo href="#!" text={text} y="small" x="right" />
+                <LinkTo href="#!" text={text} y="small" x="right" />
+                <div className={styles.new_product_img_wrapper}>
                   <Image src={img} alt="car" layout="fill" objectFit="cover" />
-                </Darkening>
+                </div>
+                <Darkening />
               </div>
             );
           })}

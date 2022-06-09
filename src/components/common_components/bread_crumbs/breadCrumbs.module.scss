@@ -1,15 +1,17 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
 .bread_crumbs {
   display: flex;
   align-items: center;
-
-  color: grey;
-  a {
-    color: grey;
+  & > * {
+    @include fsize_lheight_fwieght_color(14px, 16px, 400, $text2);
   }
-  span {
-    svg {
-      font-size: 18px;
-      margin-top: 4px;
-    }
+  // a {
+  //   @include fsize_lheight_fwieght_color(14px, 16px, 400, $text2);
+  // }
+  .img_wrapper {
+    display: block;
+    margin: 0 10px;
   }
 }

@@ -1,29 +1,39 @@
-import { useState } from "react";
+import { FC, useState } from "react";
+import Image from "next/image";
 
 import { Container } from "../container/Container";
+import { SeasonCountry } from "../season_country/SeasonCountry";
+import { Rating } from "./../rating/Rating";
+import { BreadCrumbs } from "../bread_crumbs/BreadCrumbs";
 
 import Slider from "react-slick";
 
-import {
-  AiFillHeart,
-  AiFillWechat,
-  AiOutlineShareAlt,
-  AiOutlineClose,
-} from "react-icons/ai";
-import { VscArrowSwap } from "react-icons/vsc";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
-import { Rating } from "../rating/Rating";
+
+import favorite from "../../../images/icons/favorite.svg";
+import favorite2 from "../../../images/icons/favorite2.svg";
+import forum from "../../../images/icons/forum.svg";
+import share from "../../../images/icons/share.svg";
+import share2 from "../../../images/icons/share2.svg";
+import compare from "../../../images/icons/compare.svg";
+import exit from "../../../images/icons/exit.svg";
+
+// fake
+import country from "../../../images/fake_photo/HU.png";
+import season from "../../../images/fake_photo/seasons.svg";
+import balloon from "../../../images/fake_photo/balloon3.png";
+import balloon2 from "../../../images/fake_photo/balloon2.png";
 
 const NextModalArrow = (props: any) => {
-  const { onClick, nextSlide } = props;
-  const setNext = () => {
-    nextSlide();
-    onClick();
-  };
+  const { onClick, nextSlide, className } = props;
+  const disabled = className.split(" ")[2];
   return (
     <div
-      onClick={setNext}
-      className="slider_modal_arrow slider_modal__arrow-next"
+      onClick={onClick}
+      onMouseDown={nextSlide}
+      className={`slider_modal_arrow slider_modal__arrow-next ${
+        disabled ? "slider_modal__arrow_dis" : ""
+      }`}
     >
       <RiArrowRightSLine />
     </div>
@@ -31,54 +41,40 @@ const NextModalArrow = (props: any) => {
 };
 
 const PrevModalArrow = (props: any) => {
-  const { onClick, prevSlide } = props;
-  const setNext = () => {
-    prevSlide();
-    onClick();
-  };
+  const { onClick, prevSlide, className } = props;
 
+  const disabled = className.split(" ")[2];
   return (
     <div
-      onClick={setNext}
-      className="slider_modal_arrow slider_modal__arrow-prev"
+      onClick={onClick}
+      onMouseDown={prevSlide}
+      className={`slider_modal_arrow slider_modal__arrow-prev ${
+        disabled ? "slider_modal__arrow_dis" : ""
+      }`}
     >
       <RiArrowLeftSLine />
     </div>
   );
 };
 
-const socialLeft = [
-  { id: 1, svg: AiFillHeart, text: 27 },
-  { id: 2, svg: AiFillWechat, text: 12 },
-  { id: 3, svg: AiOutlineShareAlt, text: 23 },
-];
-const socialRight = [
-  { id: 1, svg: AiOutlineShareAlt, text: "SHARE" },
-  { id: 2, svg: VscArrowSwap, text: "COMPARE" },
-  { id: 3, svg: AiFillHeart, text: "ADD TO WISHLIST" },
-];
-
-export const ModalProduct = () => {
+export const ModalProduct: FC = (): JSX.Element => {
   const images: any[] = [
-    { id: 1, img: 1 },
-    { id: 2, img: 2 },
-    { id: 3, img: 3 },
-    { id: 4, img: 4 },
-    { id: 5, img: 5 },
+    { id: 1, img: balloon },
+    { id: 2, img: balloon },
+    { id: 3, img: balloon2 },
+    { id: 4, img: balloon },
+    { id: 5, img: balloon2 },
   ];
 
   const [indexSlide, setIndexSlide] = useState<number>(0);
 
-  const nextSlide = () => {
-    setIndexSlide((state): number =>
-      state + 1 < images.length ? state + 1 : (state = 0)
-    );
+  const nextSlide = (clb: () => void) => {
+    if (indexSlide + 1 < images.length)
+      setIndexSlide((state): number => state + 1);
   };
 
   const prevSlide = () => {
-    setIndexSlide((state): number =>
-      state - 1 >= 0 ? state - 1 : (state = images.length - 1)
-    );
+    if (indexSlide - 1 >= 0) setIndexSlide((state): number => state - 1);
   };
 
   const settings = {
@@ -88,7 +84,7 @@ export const ModalProduct = () => {
     slidesToScroll: 1,
     initialSlide: 0,
     arrows: true,
-    infinite: true,
+    infinite: false,
     nextArrow: <NextModalArrow nextSlide={nextSlide} />,
     prevArrow: <PrevModalArrow prevSlide={prevSlide} />,
     // responsive: [
@@ -108,21 +104,43 @@ export const ModalProduct = () => {
         <div className="modal_product_inner">
           <div className="modal_product_left">
             <div className="modal_product_left-social">
-              {socialLeft.map((item) => (
-                <span key={item.id}>
-                  <item.svg /> {item.text}
-                </span>
-              ))}
+              <div className="modal_product_social_item">
+                <Image src={favorite} alt="icon" width={24} height={24} />
+                <span>{212}</span>
+              </div>
+              <div className="modal_product_social_item">
+                <Image src={forum} alt="icon" width={24} height={24} />
+                <span>{212}</span>
+              </div>
+              <div className="modal_product_social_item">
+                <Image src={share} alt="icon" width={24} height={24} />
+                <span>{212}</span>
+              </div>
             </div>
-            <div className="modal_product_bigimage-wrapper">
-              {/* <Image src={sliderImg} alt="main slider image" layout="fill" /> */}
-              <div>{images[indexSlide].img}</div>
-            </div>
-            <div className="modal_product_slider">
-              <Slider {...settings}>
-                {images.map((item) => (
-                  <div className="modal_product_slide" key={item.id}>
-                    {item.img}
+
+            <div className="modal_product_slider_wrapper">
+              <div className="modal_product_bigimage-wrapper">
+                <Image
+                  src={images[indexSlide].img}
+                  alt="main slider image"
+                  layout="fill"
+                />
+              </div>
+              <Slider {...settings} className="modal_product_slider">
+                {images.map((item, i) => (
+                  <div
+                    className={`modal_product_slide ${
+                      i === indexSlide ? "modal_product_slide_active" : ""
+                    }`}
+                    key={item.id}
+                  >
+                    <div className="modal_product_slide_img_wrapper">
+                      <Image
+                        src={item.img}
+                        alt="main slider image"
+                        layout="fill"
+                      />
+                    </div>
                   </div>
                 ))}
               </Slider>
@@ -132,26 +150,42 @@ export const ModalProduct = () => {
           <div className="modal_product_right">
             <div className="modal_product_right-inner">
               <div className="modal_product_bread_crumbs">
-                <span>
-                  Chair <RiArrowRightSLine />{" "}
-                </span>
-                <span>Products</span>
+                <BreadCrumbs
+                  list={[{ id: 1, href: "/", text: "Каталог" }]}
+                  last="Легковые"
+                />
               </div>
 
-              <h3 className="modal_product_title">KAILA FABRIC CHAIR</h3>
+              <h3 className="modal_product_title">
+                Pirelli Cinturato P7 Verde All Season
+              </h3>
+
+              <p className="modal_product_size">225/55r17</p>
+
+              <div className="modal_product_size_season_wrapper">
+                <SeasonCountry text="Венгрия" img={country} big country />
+
+                <SeasonCountry text="Всесезонные" img={season} big />
+              </div>
 
               <div className="modal_product_rating-box">
-                <Rating num={4} />
-                <span>Reviews(12)</span>
+                <Rating num={4} style="big" />
+                <p>Оценки (12)</p>
               </div>
 
               <div className="modal_product_right-social">
-                {socialRight.map((item) => (
-                  <span key={item.id}>
-                    <item.svg />
-                    {item.text}
-                  </span>
-                ))}
+                <div className="modal_product_social_item">
+                  <Image src={share2} alt="icon" width={24} height={24} />{" "}
+                  <span>поделиться</span>
+                </div>
+                <div className="modal_product_social_item">
+                  <Image src={compare} alt="icon" width={24} height={24} />{" "}
+                  <span>сравнить</span>
+                </div>
+                <div className="modal_product_social_item">
+                  <Image src={favorite2} alt="icon" width={24} height={24} />{" "}
+                  <span>в избранное</span>
+                </div>
               </div>
 
               <div className="modal_product_text-wrapper">
@@ -174,21 +208,28 @@ export const ModalProduct = () => {
               </div>
 
               <h4 className="modal_product_price">
-                200 000 <span>500 000</span> сум
+                <span>600 000 </span>
+                500 000 сум
               </h4>
 
-              <div className="modal_product_add-wrapper">
-                <p>QTY</p>
-                <form>
-                  <select>
-                    <option>1</option>
-                    <option>2</option>
-                  </select>
-                  <button type="button">ADD TO CARD</button>
-                </form>
+              <div className="modal_product_add_wrapper">
+                <p className="modal_product_add_qty">Кол</p>
+
+                <select name="" id="">
+                  <option value="">1</option>
+                  <option value="">2</option>
+                </select>
+                <button type="button">В корзинку</button>
+
+                <div className="modal_product_add_tottal">
+                  <span>Всего на сумму:</span>
+                  <p>500 000 сум</p>
+                </div>
               </div>
             </div>
-            <AiOutlineClose className="modal_product_close" />
+            <div className="modal_product_exit">
+              <Image src={exit} alt="exit" layout="fill" />
+            </div>
           </div>
         </div>
       </Container>

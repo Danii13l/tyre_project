@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import { RiArrowRightSLine } from "react-icons/ri";
-
 import styles from "./breadCrumbs.module.scss";
+
+import arrow from "../../../images/common/bread.svg";
 
 interface BreadCrumbslist {
   id: number;
@@ -24,8 +25,8 @@ export const BreadCrumbs = ({ list, last }: BreadCrumbsInt) => {
             <Link href={item.href} key={item.id}>
               <a>{item.text}</a>
             </Link>
-            <span>
-              <RiArrowRightSLine />
+            <span className={styles.img_wrapper}>
+              <Image src={arrow} alt="arrow" width={7} height={8} />
             </span>
           </>
         );

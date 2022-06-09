@@ -77,6 +77,9 @@ export const Header: FC = () => {
                 <Image src={grocery} alt="local-grocery-store" />
                 <p className={styles.price}>1 400 000</p>
                 <p>сум</p>
+                <div className={styles.price_amount}>
+                  <span>2</span>
+                </div>
               </div>
             </div>
           </div>

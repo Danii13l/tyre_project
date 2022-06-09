@@ -1,16 +1,32 @@
 import Select from "react-select";
 
-interface selectInt {
-  value: number | string;
-  label: number | string;
+interface optionInt {
+  value: string;
+  label: string;
 }
 
-export const CustomSelect = ({ options }: any) => {
+interface selectInt {
+  options: optionInt[];
+  placehold: string;
+  isLabel?: boolean;
+  labelText?: string;
+}
+
+export const CustomSelect = ({
+  options,
+  placehold,
+  labelText,
+  isLabel,
+}: selectInt) => {
   return (
-    <Select
-      options={options}
-      placeholder="Select country"
-      classNamePrefix="custom_select"
-    />
+    <>
+      {isLabel && <label className="label_main_select">{labelText}</label>}
+      <Select
+        options={options}
+        placeholder={placehold}
+        isSearchable={false}
+        classNamePrefix="main_select"
+      />
+    </>
   );
 };

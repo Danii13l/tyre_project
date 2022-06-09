@@ -8,6 +8,7 @@ import { PrevArrow } from "../../common_components/slider_arrow/PrevArrow";
 import china from "../../../images/fake_photo/HU.png";
 import balloon2 from "../../../images/fake_photo/balloon2.png";
 import { SmallCard } from "./../../common_components/small_card/SmallCard";
+import { ButtonLink } from "../../common_components/button_link/ButtonLink";
 
 const fakeData = [
   {
@@ -131,6 +132,10 @@ export const SubCategory = () => {
                 );
               })}
             </Slider>
+          </div>
+          {/* button */}
+          <div className="sub_category__button_link_wrapper">
+            <ButtonLink href="#!" text="Показать все" />
           </div>
         </div>
       </Container>

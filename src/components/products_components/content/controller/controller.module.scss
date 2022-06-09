@@ -1,0 +1,42 @@
+@import "../../../../../styles/variables.module.scss";
+@import "../../../../../styles/mixins.module.scss";
+
+.controller {
+  @include dflex_jcontent_aitems(space-between, flex-start);
+  margin-bottom: 24px;
+}
+
+.pagination_wrapper {
+  padding-top: 5px;
+}
+
+.controller_sort_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.controller_view {
+  display: flex;
+}
+
+.controller_view_item {
+  @include width_height(37px, 37px);
+  @include dflex_jcontent_aitems(center, center);
+  background: #f2f2f2;
+  border: 1px solid $light;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-left: 8px;
+
+  svg {
+    stroke: $text2;
+  }
+
+  &.active {
+    background: $text2;
+    border: 1px solid $text2;
+    svg {
+      stroke: $white;
+    }
+  }
+}

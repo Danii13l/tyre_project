@@ -10,11 +10,10 @@ export const Layout = ({ children }: StandardComponentProps) => {
   return (
     <div>
       <Header />
+      {/* <ModalProduct /> */}
       {children}
       <Footer />
-      {/* <ModalProduct /> */}
-      {/* 
-      <ShoppingCardSidebar /> */}
+      {/*  <ShoppingCardSidebar /> */}
     </div>
   );
 };

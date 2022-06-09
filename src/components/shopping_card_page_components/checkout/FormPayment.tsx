@@ -63,7 +63,7 @@ export const FormPayment = () => {
     <div className={styles.form_payment}>
       <form className={styles.form}>
         <div className={styles.select}>
-          <CustomSelect options={fakeoptions} />
+          <CustomSelect options={fakeoptions} placehold="dct" />
         </div>
 
         <div className={styles.inputs_wrapper}>

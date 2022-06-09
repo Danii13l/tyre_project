@@ -1,8 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 import styles from "./bigCard.module.scss";
 
-import seasonImg from "../../../images/fake_photo/seasons.svg";
 import { Rating } from "../rating/Rating";
+import { SeasonCountry } from "../season_country/SeasonCountry";
+
+import seasonImg from "../../../images/fake_photo/seasons.svg";
+import frame from "../../../images/common/big_card_frame.svg";
 
 interface bigCardInt {
   id: number;
@@ -11,6 +14,7 @@ interface bigCardInt {
   countryImg: string | StaticImageData;
   countryName: string;
   seasonName: string;
+  seasonImg: string | StaticImageData;
   discount: null | number;
   isNew: boolean;
   mainImg: string | StaticImageData;
@@ -25,6 +29,7 @@ export const BigCard = ({
   countryImg,
   countryName,
   seasonName,
+  seasonImg,
   discount,
   mainImg,
   isNew,
@@ -38,14 +43,8 @@ export const BigCard = ({
         <h5 className={styles.size}>{size}</h5>
 
         <div className={styles.country_season_wrapper}>
-          <div className={styles.country_wrapper}>
-            <Image src={countryImg} alt="country" />
-            <span>{countryName}</span>
-          </div>
-          <div className={styles.season_wrapper}>
-            <Image src={seasonImg} alt="country" />
-            <span>{seasonName}</span>
-          </div>
+          <SeasonCountry text={countryName} img={countryImg} country />
+          <SeasonCountry text={seasonName} img={seasonImg} />
         </div>
       </div>
 
@@ -59,6 +58,10 @@ export const BigCard = ({
       <div className={styles.rating_price_wrapper}>
         <Rating num={rating} />
         <h6 className={styles.price}>{price} сум</h6>
+      </div>
+
+      <div className={styles.frame}>
+        <Image src={frame} alt="country" />
       </div>
     </div>
   );

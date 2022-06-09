@@ -7,9 +7,10 @@ import styles from "./rating.module.scss";
 
 interface ratingInt {
   num: number | null;
+  style?: string;
 }
 
-export const Rating = ({ num }: ratingInt) => {
+export const Rating = ({ num, style }: ratingInt) => {
   const count: number[] = [1, 2, 3, 4, 5];
 
   return (
@@ -20,6 +21,8 @@ export const Rating = ({ num }: ratingInt) => {
             <Image
               src={num != null && item <= num ? star_yellow : star_grey}
               alt="rating"
+              width={style ? 16 : 12}
+              height={style ? 16 : 12}
             />
           </span>
         );

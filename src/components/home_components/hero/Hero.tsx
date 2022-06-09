@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Container } from "../../common_components/container/Container";
 import { Darkening } from "../../common_components/darkening/Darkening";
-import { LinkTo } from "../../common_components/LinkTo/LinkTo";
+import { LinkTo } from "../../common_components/link_to/LinkTo";
 
 import Slider from "react-slick";
 
@@ -41,45 +41,49 @@ export const Hero: FC = (): JSX.Element => {
           <div className="hero_main_item">
             <Slider {...settings}>
               <div className="hero_main_item-slides">
-                <Darkening>
-                  <LinkTo
-                    href="#!"
-                    y="big"
-                    x="left"
-                    text="Как правильно подобрать шины?"
-                  />
+                <LinkTo
+                  href="#!"
+                  y="big"
+                  x="left"
+                  text="Как правильно подобрать шины?"
+                />
 
+                <div className="hero_img_wrapper">
                   <Image src={slides} alt="s" layout="fill" objectFit="cover" />
-                </Darkening>
+                </div>
+                <Darkening />
               </div>
               <div className="hero_main_item-slides">
-                <Darkening>
-                  <LinkTo
-                    href="#!"
-                    y="big"
-                    x="left"
-                    text="Как правильно подобрать шины?"
-                  />
+                <LinkTo
+                  href="#!"
+                  y="big"
+                  x="left"
+                  text="Как правильно подобрать шины?"
+                />
 
-                  <Image src={slides} alt="s" layout="fill" className="kkkk" />
-                </Darkening>
+                <div className="hero_img_wrapper">
+                  <Image src={slides} alt="s" layout="fill" objectFit="cover" />
+                </div>
+                <Darkening />
               </div>
             </Slider>
           </div>
           <div className="hero_second_item">
-            <Darkening>
-              <LinkTo href="#!" y="small" x="right" text="КУПИТЬ СЕЙЧАС" />
-              <p className="hero_subtitles">Шины MICHELIN</p>
+            <LinkTo href="#!" y="small" x="right" text="КУПИТЬ СЕЙЧАС" />
+            <p className="hero_subtitles">Шины MICHELIN</p>
+            <div className="hero_img_wrapper">
               <Image src={michelin} alt="s" layout="fill" objectFit="cover" />
-            </Darkening>
+            </div>
+            <Darkening />
           </div>
 
           <div className="hero_third_item">
-            <Darkening>
-              <LinkTo href="#!" y="small" x="right" text="КУПИТЬ СЕЙЧАС" />
-              <p className="hero_subtitles">Шины BRIDGESTONE</p>
+            <LinkTo href="#!" y="small" x="right" text="КУПИТЬ СЕЙЧАС" />
+            <p className="hero_subtitles">Шины BRIDGESTONE</p>
+            <div className="hero_img_wrapper">
               <Image src={brid} alt="s" layout="fill" objectFit="cover" />
-            </Darkening>
+            </div>
+            <Darkening />
           </div>
         </div>
       </Container>

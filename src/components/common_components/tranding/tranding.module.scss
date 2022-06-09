@@ -1,10 +1,6 @@
 @import "../../../../styles/variables.module.scss";
 @import "../../../../styles/mixins.module.scss";
 
-.tranding {
-  margin-bottom: 48px;
-}
-
 .tranding_inner {
   display: flex;
   justify-content: space-between;
@@ -15,8 +11,8 @@
 
   div {
     flex: 1;
+    overflow: hidden;
     height: 230px;
-    background: #f2f2f2;
     position: relative;
   }
 
@@ -24,5 +20,10 @@
     @include pos_absolute(32px, 32px, auto, auto);
     @include fsize_lheight_fwieght_color(32px, 44px, 700, $white);
     z-index: 1;
+  }
+
+  .img_wrapper {
+    position: absolute;
+    @include width_height(100%, 100%);
   }
 }

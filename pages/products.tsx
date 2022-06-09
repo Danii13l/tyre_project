@@ -1,13 +1,16 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 
 import { Container } from "../src/components/common_components/container/Container";
-import { Controller } from "../src/components/products_components/controller/Controller";
-import { GridView } from "../src/components/products_components/grid_view/GridView";
-import { HotSale } from "../src/components/products_components/hot_sale/HotSale";
-import { ListView } from "../src/components/products_components/list_view/ListView";
+import { Controller } from "../src/components/products_components/content/controller/Controller";
+import { GridView } from "../src/components/products_components/content/grid_view/GridView";
+import { HeaderProducts } from "./../src/components/products_components/top/HeaderProducts";
+import { ListView } from "../src/components/products_components/content/list_view/ListView";
 
 import styles from "../src/components/products_components/products.module.scss";
 import img from "../src/images/slide_examples/chair.jpg";
+import { Tranding } from "../src/components/common_components/tranding/Tranding";
+import { FilterProducts } from "../src/components/products_components/aside/FilterProducts";
 
 const dataServer = [
   {
@@ -92,11 +95,17 @@ const dataServer = [
 const Products: NextPage = () => {
   return (
     <div className={styles.products}>
+      <Head>
+        <title>Каталог</title>
+      </Head>
+      <Container>
+        <HeaderProducts />
+      </Container>
+
       <Container>
         <div className={styles.products_inner}>
-          <aside className={styles.sidebar}>
-            <HotSale />
-          </aside>
+          <FilterProducts />
+
           <div className={styles.content}>
             <Controller />
             {/* <ListView data={dataServer} /> */}
@@ -104,6 +113,8 @@ const Products: NextPage = () => {
           </div>
         </div>
       </Container>
+
+      <Tranding />
     </div>
   );
 };
