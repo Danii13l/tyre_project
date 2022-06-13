@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import Select from "react-select";
-import { Pagination } from "../../../common_components/pagination/Pagination";
 
 import styles from "./controller.module.scss";
 
@@ -11,19 +10,16 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
-export const Controller = () => {
+export const Controller = ({ handleView }: any) => {
   const [view, setView] = useState<number>(0);
 
-  const changeView = (num: number): (() => void) => {
-    return () => setView(num);
+  const changeView = (num: number) => {
+    setView(num);
+    handleView(num);
   };
 
   return (
     <div className={styles.controller}>
-      <div className={styles.pagination_wrapper}>
-        <Pagination />
-      </div>
-
       <div className={styles.controller_sort_wrapper}>
         <Select
           options={options}
@@ -35,7 +31,7 @@ export const Controller = () => {
             className={`${styles.controller_view_item} ${
               view === 0 ? styles.active : ""
             }`}
-            onClick={changeView(0)}
+            onClick={() => changeView(0)}
           >
             <svg
               width="32"
@@ -51,7 +47,7 @@ export const Controller = () => {
             className={`${styles.controller_view_item} ${
               view === 1 ? styles.active : ""
             }`}
-            onClick={changeView(1)}
+            onClick={() => changeView(1)}
           >
             <svg
               width="32"

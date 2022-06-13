@@ -1,7 +1,8 @@
 import styles from "./settings.module.scss";
 
-import image from "../../../images/slide_examples/slide1.jpg";
+import image from "../../../images/fake_photo/balloon2.png";
 import Image from "next/image";
+
 import { useState } from "react";
 import { ChangeSettings } from "./setting_sub_components/ChangeSettings";
 import { PayCard } from "./setting_sub_components/PayCard";

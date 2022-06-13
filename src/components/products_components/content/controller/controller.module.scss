@@ -2,12 +2,8 @@
 @import "../../../../../styles/mixins.module.scss";
 
 .controller {
-  @include dflex_jcontent_aitems(space-between, flex-start);
+  @include dflex_jcontent_aitems(flex-end, flex-start);
   margin-bottom: 24px;
-}
-
-.pagination_wrapper {
-  padding-top: 5px;
 }
 
 .controller_sort_wrapper {

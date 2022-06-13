@@ -6,13 +6,15 @@
 }
 
 .navbar_left_side {
+  @include dflex_jcontent_aitems(stretch, center);
+  flex: 1;
+
   .logo {
     display: block;
-    margin-bottom: 6px;
   }
 
   form {
-    display: flex;
+    margin: 0 auto;
     .input_wrapper {
       width: 100%;
       position: relative;

@@ -1,25 +1,26 @@
-import Image from "next/image";
-import styles from "./pagination.module.scss";
+import ReactPaginate from "react-paginate";
 
-import slash from "../../../images/common/pagination_slash.svg";
+import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 
-export const Pagination = () => {
+interface paginationInt {
+  initialPage: number;
+  pageCount: number;
+}
+
+export const Pagination = ({
+  initialPage,
+  pageCount,
+}: paginationInt): JSX.Element => {
   return (
-    <div className={styles.pagination}>
-      <p className={styles.pagination_show}>Отобразить </p>
-      <span className={styles.active}>9</span>
-      <span>
-        <Image src={slash} alt="icon" />
-      </span>
-      <span>18</span>
-      <span>
-        <Image src={slash} alt="icon" />
-      </span>
-      <span>27</span>
-      <span>
-        <Image src={slash} alt="icon" />
-      </span>
-      <span>Все</span>
+    <div className="pagination_bottom">
+      <ReactPaginate
+        initialPage={initialPage}
+        pageCount={pageCount}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+        previousLabel={<RiArrowLeftSLine />}
+        nextLabel={<RiArrowRightSLine />}
+      />
     </div>
   );
 };

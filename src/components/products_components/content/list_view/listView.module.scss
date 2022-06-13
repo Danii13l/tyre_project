@@ -1,63 +1,125 @@
-.list_item {
-  display: flex;
-  padding: 30px 0;
-  border-bottom: 1px solid grey;
-  margin-bottom: 30px;
+@import "../../../../../styles/variables.module.scss";
+@import "../../../../../styles/mixins.module.scss";
+
+.list {
+  @include dflex_jcontent_aitems(stretch, stretch);
+  border: 1px solid $light;
+  overflow: hidden;
+  margin-bottom: 32px;
 }
 
-.list_img_wrapper {
-  flex: 1;
-  height: 200px;
-  position: relative !important;
+.img_block {
+  @include dflex_jcontent_aitems(center, center);
+  @include width_height(290px, 250px);
+  position: relative;
+  background-color: #f9f9f9;
+  .discount {
+    @include pos_absolute(32px, 0, auto, auto);
+
+    @include fsize_lheight_fwieght_color(16px, 16px, 600, $white);
+    z-index: 2;
+    padding: 8px;
+    background: $accent2;
+  }
+
+  .new {
+    @include pos_absolute(80px, 0, auto, auto);
+    @include fsize_lheight_fwieght_color(16px, 16px, 600, $white);
+    z-index: 2;
+    padding: 8px;
+    background: $accent;
+  }
+  .img_wrapper {
+    @include width_height(200px, 200px);
+    z-index: 1;
+    position: relative !important;
+  }
+
+  .frame_wrapper {
+    position: absolute;
+    bottom: -4px;
+  }
 }
 
-.list_info {
-  flex: 2;
-  margin: 0 30px;
-
-  .list_title {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  h3 {
-    margin-bottom: 20px;
-  }
-
-  .list_desc {
-    font-size: 16px;
-    color: grey;
-  }
-}
-
-.list_actions {
-  border-left: 1px solid grey;
-  flex: 1;
+.content {
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 
-  .list_rating {
-    display: flex;
-    color: grey;
-    margin-bottom: 15px;
+  flex: 2;
+
+  .title_product {
+    @include fsize_lheight_fwieght_color(18px, 15px, 600, $accent);
+    margin: 4px 0 22px;
   }
 
-  .list_add {
+  .size_product {
+    @include fsize_lheight_fwieght_color(18px, 20px, 400, $text2);
     text-transform: uppercase;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
 
-  .list_action {
+  .season_wrapper {
     display: flex;
-    align-items: center;
-    background-color: transparent;
-    margin-bottom: 10px;
+    & > div {
+      margin-right: 8px;
+    }
+    margin-bottom: 22px;
+  }
+
+  .price {
+    @include fsize_lheight_fwieght_color(24px, 33px, 600, $accent);
     span {
-      margin-left: 2px;
+      @include fsize_lheight_fwieght_color(20px, 27px, 500, $text2);
+      text-decoration: line-through;
+      display: inline-block;
+      margin-right: 16px;
+    }
+  }
+}
+
+.actions {
+  background: #f6f6f6;
+
+  margin-left: 30px;
+  @include dflex_jcontent_aitems(center, stretch);
+  flex-direction: column;
+  padding: 48px 32px;
+  .actions_item {
+    @include dflex_jcontent_aitems(stretch, center);
+    @include fsize_lheight_fwieght_color(14px, 20px, 400, $text2);
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &:hover {
+      color: $accent2;
+      svg {
+        fill: $accent2 !important;
+      }
+    }
+
+    .actions_img_wrapper {
+      background-color: $white;
+      padding: 4px;
+      @include dflex_jcontent_aitems(center, center);
+      border-radius: 50%;
+      @include width_height(24px, 24px);
+      margin-right: 8px;
+      svg {
+        fill: $text2;
+      }
+    }
+  }
+
+  .add_btn {
+    @include fsize_lheight_fwieght_color(14px, 20px, 500, $white);
+    background: $text2;
+    border-radius: 100px;
+    width: 150px;
+    padding: 8px;
+    transition: 0.5s;
+    &:hover {
+      background: $accent2;
     }
   }
 }

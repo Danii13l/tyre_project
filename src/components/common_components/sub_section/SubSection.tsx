@@ -1,9 +1,13 @@
-import { Container } from "../../common_components/container/Container";
-import styles from "./discountProducts.module.scss";
+import { Container } from "../container/Container";
+import styles from "./subSection.module.scss";
 
 import fakeImg from "../../../images/fake_photo/balloon2.png";
-import { SubCategory } from "../sub_category/SubCategory";
-import { SubProduct } from "../../common_components/sub_product/SubProduct";
+
+import { SubProduct } from "../sub_product/SubProduct";
+
+interface subSectionInt {
+  title: string;
+}
 
 const fakeData = [
   {
@@ -40,11 +44,11 @@ const fakeData = [
   },
 ];
 
-export const DiscountProducts = () => {
+export const SubSection = ({ title }: subSectionInt) => {
   return (
     <div>
       <Container>
-        <h3 className={styles.title}>ТОВАРЫ НА СКИДКЕ</h3>
+        <h3 className={styles.title}>{title}</h3>
         <div className={styles.inner}>
           {fakeData.map((item) => {
             return (

@@ -2,7 +2,8 @@ import { Container } from "../src/components/common_components/container/Contain
 
 import styles from "../styles/pages/cabinet/cabinet.module.scss";
 
-import image from "../src/images/slide_examples/a.jpg";
+import image from "../src/images/fake_photo/balloon2.png";
+
 import { ButtonsLeft } from "../src/components/cabinet_components/buttons_left/ButtonsLeft";
 import { useState } from "react";
 import { Settings } from "../src/components/cabinet_components/setting/Settings";

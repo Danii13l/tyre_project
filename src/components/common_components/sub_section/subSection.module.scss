@@ -4,6 +4,7 @@
 .title {
   @include fsize_lheight_fwieght_color(20px, 20px, 700, #4f4f4f);
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .inner {

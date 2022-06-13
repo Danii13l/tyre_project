@@ -1,98 +1,26 @@
 import type { NextPage } from "next";
+
 import Head from "next/head";
 
 import { Container } from "../src/components/common_components/container/Container";
 import { Controller } from "../src/components/products_components/content/controller/Controller";
-import { GridView } from "../src/components/products_components/content/grid_view/GridView";
 import { HeaderProducts } from "./../src/components/products_components/top/HeaderProducts";
-import { ListView } from "../src/components/products_components/content/list_view/ListView";
-
-import styles from "../src/components/products_components/products.module.scss";
-import img from "../src/images/slide_examples/chair.jpg";
 import { Tranding } from "../src/components/common_components/tranding/Tranding";
 import { FilterProducts } from "../src/components/products_components/aside/FilterProducts";
+import { Pagination } from "./../src/components/common_components/pagination/Pagination";
+import { ContentProducts } from "../src/components/products_components/content/ContentProducts";
 
-const dataServer = [
-  {
-    id: 1,
-    text: "Стул Oldem Дуб",
-    price: "2 000",
-    rating: 3,
-    discount: 5,
-    new: true,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 5,
-  },
-  {
-    id: 2,
-    text: "Стул Oldem Дуб",
-    price: "500 000",
-    rating: 2,
-    discount: null,
-    new: false,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 12,
-  },
-  {
-    id: 3,
-    text: "Стул Oldem Дуб",
-    price: "12 220 000",
-    rating: 5,
-    discount: 23,
-    new: true,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 3,
-  },
-  {
-    id: 4,
-    text: "Стул Oldem Дуб",
-    price: "20 000",
-    rating: null,
-    discount: null,
-    new: false,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 3,
-  },
-  {
-    id: 5,
-    text: "Стул Oldem Дуб",
-    price: "300 000",
-    rating: null,
-    discount: null,
-    new: false,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 32,
-  },
-  {
-    id: 6,
-    text: "Стул Oldem Дуб",
-    price: "300 000",
-    rating: null,
-    discount: null,
-    new: true,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 3,
-  },
-  {
-    id: 7,
-    text: "Стул Oldem Дуб",
-    price: "300 000",
-    rating: null,
-    discount: null,
-    new: true,
-    img: img,
-    desc: "Koila is a chair designed for restaurants and food lovers in general. Designed in collaboration with restaurant professionals, it ensures comfort and an ideal posture, as there are armrests on both sides of the chair.",
-    reviews: 23,
-  },
-];
+import styles from "../src/components/products_components/products.module.scss";
+import { useState } from "react";
+import { SubSection } from "../src/components/common_components/sub_section/SubSection";
 
 const Products: NextPage = () => {
+  const [view, setView] = useState<number>(0);
+
+  const handleView = (num: number): void => {
+    setView(num);
+  };
+
   return (
     <div className={styles.products}>
       <Head>
@@ -107,14 +35,15 @@ const Products: NextPage = () => {
           <FilterProducts />
 
           <div className={styles.content}>
-            <Controller />
-            {/* <ListView data={dataServer} /> */}
-            <GridView data={dataServer} />
+            <Controller handleView={handleView} />
+            <ContentProducts view={view} />
+            <Pagination initialPage={1} pageCount={70} />
           </div>
         </div>
       </Container>
 
-      <Tranding />
+      <SubSection title="Похожие товары" />
+      <SubSection title="ТОВАРЫ НА СКИДКЕ" />
     </div>
   );
 };

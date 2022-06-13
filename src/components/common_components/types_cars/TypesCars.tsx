@@ -39,7 +39,7 @@ const links: linksInt[] = [
     id: 3,
     href: "#!",
     name: "Шины для Спецтехники",
-    name2: "Спецтехники",
+    name2: "Спецтехника",
     img: car_cargo,
   },
 ];

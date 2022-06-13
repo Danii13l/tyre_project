@@ -8,6 +8,14 @@
   display: flex;
   flex-direction: column;
   background: #f9f9f9;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    .addTo {
+      transform: translateY(0);
+    }
+  }
 }
 
 .big_card_top {
@@ -88,4 +96,47 @@
   position: absolute;
   width: 100%;
   bottom: -4px;
+}
+
+.addTo {
+  @include dflex_jcontent_aitems(space-between, baseline);
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  transition: 0.5s;
+  transform: translateY(110%);
+
+  button {
+    @include fsize_lheight_fwieght_color(16px, 20px, 500, $text2);
+    padding: 16px;
+    @include dflex_jcontent_aitems(center, center);
+    background: $white;
+
+    transition: 0.5s;
+    span {
+      margin-left: 10px;
+    }
+
+    svg {
+      transition: 0.5s;
+      fill: $text2;
+    }
+    &:first-child {
+      flex: 3;
+      border-right: 1px solid $light;
+    }
+
+    &:last-child {
+      flex: 1;
+      border-left: 1px solid $light;
+    }
+
+    &:hover {
+      color: $accent2;
+      svg {
+        fill: $accent2;
+      }
+    }
+  }
 }
