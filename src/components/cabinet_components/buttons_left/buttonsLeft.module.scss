@@ -1,23 +1,50 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
 .button {
-  display: flex;
-  align-items: center;
-  padding: 10px 5px;
+  @include dflex_jcontent_aitems(stretch, center);
+  padding: 8px 16px;
   width: 100%;
-  margin-bottom: 20px;
-  border-radius: 50px;
-  background-color: transparent;
-  transition: 0.7s;
-  color: grey;
-  &:hover {
-    box-shadow: 0px 0px 30px 1px rgba(128, 128, 128, 0.303);
+
+  border-radius: 6px;
+  background-color: $white;
+  margin-bottom: 8px;
+  @include fsize_lheight_fwieght_color(14px, 19px, 400, $accent);
+
+  &.active {
+    border: 1px solid $accent2;
+    position: relative;
+    &:after {
+      content: "";
+      background: url("../../../images/icons/active_triangle.svg") no-repeat;
+      @include width_height(36px, 36px);
+      @include pos_absolute(15%, auto, auto, -18%);
+    }
+  }
+  &.main {
+    @include dflex_jcontent_aitems(center, center);
+    @include fsize_lheight_fwieght_color(16px, 16px, 600, $accent);
+    margin-bottom: 32px;
+
+    &.active {
+      &:after {
+        @include pos_absolute(25%, auto, auto, -18%);
+      }
+    }
+    p:last-child {
+      @include fsize_lheight_fwieght_color(14px, 16px, 400, $text2);
+      margin-top: 8px;
+    }
+    .img_box {
+      @include width_height(42px, 42px);
+      margin-right: 16px;
+    }
   }
 }
 
 .img_box {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  @include width_height(24px, 24px);
   overflow: hidden;
   position: relative;
-  margin-right: 20px;
+  margin-right: 12px;
 }

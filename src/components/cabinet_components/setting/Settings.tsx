@@ -1,17 +1,21 @@
-import styles from "./settings.module.scss";
+import { useState } from "react";
 
-import image from "../../../images/fake_photo/balloon2.png";
 import Image from "next/image";
 
-import { useState } from "react";
 import { ChangeSettings } from "./setting_sub_components/ChangeSettings";
 import { PayCard } from "./setting_sub_components/PayCard";
 import { Address } from "./setting_sub_components/Address";
 
+import styles from "./settings.module.scss";
+
+import personal_data from "../../../images/icons/personal_data.svg";
+import my_card from "../../../images/icons/my_card.svg";
+import address from "../../../images/icons/address_location.svg";
+
 const buttons = [
-  { id: 1, text: "Личные данные", img: image },
-  { id: 2, text: "Моя карта", img: image },
-  { id: 3, text: "Адрес доставки", img: image },
+  { id: 1, text: "Личные данные", img: personal_data },
+  { id: 2, text: "Моя карта", img: my_card },
+  { id: 3, text: "Адрес доставки", img: address },
 ];
 
 export const Settings = () => {

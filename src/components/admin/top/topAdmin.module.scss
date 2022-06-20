@@ -1,0 +1,27 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
+.top {
+  @include dflex_jcontent_aitems(flex-end, center);
+  background-color: $light1;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.img_wrapper {
+  @include width_height(80px, 80px);
+  position: relative;
+}
+
+.user_wrapper {
+  @include dflex_jcontent_aitems(stretch, center);
+
+  h5 {
+    margin-left: 10px;
+  }
+}
+.exit {
+  display: block;
+  padding: 10px;
+  margin-left: 100px;
+}

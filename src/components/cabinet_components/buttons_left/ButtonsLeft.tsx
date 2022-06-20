@@ -1,7 +1,9 @@
-import styles from "./buttonsLeft.module.scss";
+import { FC } from "react";
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { Url } from "url";
+
+import styles from "./buttonsLeft.module.scss";
 
 interface buttonsInt {
   text: string[];
@@ -9,22 +11,26 @@ interface buttonsInt {
   type: string;
   id: number;
   changePage: (id: number) => void;
+  mainBtn?: boolean;
+  isActive: boolean;
 }
 
-export const ButtonsLeft = ({
+export const ButtonsLeft: FC<buttonsInt> = ({
   text,
   img,
   type,
   changePage,
   id,
-}: buttonsInt) => {
+  mainBtn,
+  isActive,
+}): JSX.Element => {
   switch (type) {
     case "link":
       return (
         <Link href="/">
           <a className={styles.button}>
             <div className={styles.img_box}>
-              <Image src={img} alt="icon" layout="fill" objectFit="cover" />
+              <Image src={img} alt="icon" layout="fill" />
             </div>
             <p>{text}</p>
           </a>
@@ -35,11 +41,13 @@ export const ButtonsLeft = ({
       return (
         <button
           type="button"
-          className={styles.button}
+          className={`${styles.button} ${mainBtn ? styles.main : ""} ${
+            isActive ? styles.active : ""
+          }`}
           onClick={() => changePage(id)}
         >
           <div className={styles.img_box}>
-            <Image src={img} alt="icon" layout="fill" objectFit="cover" />
+            <Image src={img} alt="icon" layout="fill" />
           </div>
           <div>
             {text.map((item) => (

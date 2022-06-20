@@ -1,7 +1,10 @@
-import styles from "./input.module.scss";
-import { useState } from "react";
+import { FC, useState } from "react";
 
-import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
+import open_eye from "../../../images/icons/open_eye.svg";
+import closed_eye from "../../../images/icons/closed_eye.svg";
+
+import styles from "./input.module.scss";
+import Image from "next/image";
 
 interface InputInt {
   type: string;
@@ -11,18 +14,15 @@ interface InputInt {
   placeh?: string;
 }
 
-export const InputPrimary = ({
+export const InputPrimary: FC<InputInt> = ({
   type,
   name,
   labelFor,
   labelText,
   placeh,
-}: InputInt) => {
+}): JSX.Element => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const togglePasswort = (ev: any) => {
-    setShowPassword(!showPassword);
-  };
   return (
     <div>
       {labelFor && (
@@ -50,9 +50,23 @@ export const InputPrimary = ({
             placeholder={placeh}
           />
           {showPassword ? (
-            <RiEyeLine onClick={togglePasswort} />
+            <span className={styles.img_password_wrapper}>
+              <Image
+                src={open_eye}
+                onClick={() => setShowPassword(!showPassword)}
+                alt="eye"
+                layout="fill"
+              />
+            </span>
           ) : (
-            <RiEyeCloseLine onClick={togglePasswort} />
+            <span className={styles.img_password_wrapper}>
+              <Image
+                src={closed_eye}
+                onClick={() => setShowPassword(!showPassword)}
+                alt="eye"
+                layout="fill"
+              />
+            </span>
           )}
         </div>
       )}

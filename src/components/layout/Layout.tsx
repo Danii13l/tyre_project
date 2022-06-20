@@ -5,15 +5,19 @@ import { Footer } from "../common_components/footer/Footer";
 import { StandardComponentProps } from "../../interfaces/StandardComponentProps";
 
 import { ShoppingCardSidebar } from "../common_components/shopping_card_sidebar/ShoppingCardSidebar";
+import { useRouter } from "next/router";
 
 export const Layout = ({ children }: StandardComponentProps) => {
+  const { pathname } = useRouter();
+
   return (
     <div>
-      <Header />
+      {pathname !== "/admin" && <Header />}
       {/* <ModalProduct /> */}
       {children}
-      <Footer />
-      {/*  <ShoppingCardSidebar /> */}
+
+      {pathname !== "/admin" && <Footer />}
+      {/* <ShoppingCardSidebar /> */}
     </div>
   );
 };

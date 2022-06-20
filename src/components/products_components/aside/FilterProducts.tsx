@@ -2,7 +2,7 @@ import styles from "./filterProducts.module.scss";
 
 import { CustomSelect } from "../../common_components/custom_select/CustomSelect";
 import Select from "react-select";
-import { ButtonSubmit } from "../../common_components/button_submit/ButtonSubmit";
+import { ButtonMain } from "../../common_components/button_submit/ButtonMain";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -85,7 +85,7 @@ export const FilterProducts = () => {
         <input type="text" placeholder="99 999 999" />
       </div>
 
-      <ButtonSubmit text="Подобрать" />
+      <ButtonMain text="Подобрать" type="button" />
     </aside>
   );
 };

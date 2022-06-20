@@ -1,27 +1,25 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
 .select {
   margin-bottom: 20px;
 }
 
 .label {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   display: block;
+  @include fsize_lheight_fwieght_color(14px, 19px, 400, $text2);
 }
 
 .input,
 .textarea {
   display: block;
   width: 100%;
-  padding: 10px;
-
-  background-color: transparent;
-  border: 1px solid grey;
-  border-radius: 10px;
-  transition: 0.6s;
-  font-size: 16px;
-  &:focus {
-    box-shadow: 0px 2px 10px 0px rgba(128, 128, 128, 0.558);
-    transform: translateY(-2px);
-  }
+  padding: 8px 16px;
+  border-radius: 100px;
+  background: $background-grey;
+  border: 1px solid $light;
+  @include fsize_lheight_fwieght_color(14px, 19px, 400, $accent);
 }
 
 .textarea {
@@ -29,6 +27,7 @@
   height: 100px;
 }
 
+// delete it
 .button {
   width: 100px;
   padding: 10px;
@@ -38,20 +37,16 @@
 .input_password_wrapper {
   position: relative;
   input {
-    padding: 10px 40px 10px 10px;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid grey;
+    padding: 8px 40px 8px 16px;
   }
 
-  svg {
+  .img_password_wrapper {
+    @include width_height(20px, 20px);
     position: absolute;
-    right: 10px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    font-size: 20px;
   }
 }
 
@@ -59,15 +54,14 @@
   position: relative;
 
   input {
-    padding-left: 55px;
+    padding: 8px 16px 8px 50px;
   }
 
   div {
     position: absolute;
-    top: 50%;
-    left: 10px;
+    top: 49%;
+    left: 16px;
     transform: translateY(-50%);
-    font-size: 18px;
-    color: grey;
+    @include fsize_lheight_fwieght_color(14px, 19px, 400, $accent);
   }
 }

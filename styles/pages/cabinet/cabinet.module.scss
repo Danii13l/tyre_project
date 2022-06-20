@@ -1,14 +1,24 @@
+@import "../../variables.module.scss";
+@import "../../mixins.module.scss";
+
 .cabinet_inner {
   display: flex;
 }
 
 .cabinet_left_side {
-  min-width: 270px;
-  border-right: 1px solid rgba(128, 128, 128, 0.5);
-  padding: 20px 10px;
-  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  min-width: 290px;
+  max-width: 290px;
+  background: $background-grey;
+  border-radius: 6px;
+  padding: 16px;
+  margin-right: 48px;
 }
 
 .cabinet_right_side {
   width: 100%;
+  background: $background-grey;
+  border-radius: 6px;
 }
