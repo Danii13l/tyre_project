@@ -24,22 +24,6 @@ const fakeData = [
     newPrice: "100 000",
   },
   {
-    id: 1,
-    title: "Pirelli Scorpion Verde All Season",
-    size: "235/55 R17",
-    countryImg: hg,
-    countryName: "Венгрия",
-    seasonName: "Всесезонные",
-    seasonImg: season,
-    discount: 23,
-    isNew: true,
-    mainImg: balloon2,
-    rating: 3,
-    price: "2 500 000",
-    oldPrice: "200 000",
-    newPrice: "100 000",
-  },
-  {
     id: 2,
     title: "Pirelli Scorpion Verde All Season",
     size: "235/55 R17",
@@ -48,7 +32,7 @@ const fakeData = [
     seasonName: "Всесезонные",
     seasonImg: season,
     discount: 23,
-    isNew: false,
+    isNew: true,
     mainImg: balloon2,
     rating: 3,
     price: "2 500 000",
@@ -96,7 +80,7 @@ const fakeData = [
     seasonName: "Всесезонные",
     seasonImg: season,
     discount: 23,
-    isNew: true,
+    isNew: false,
     mainImg: balloon2,
     rating: 3,
     price: "2 500 000",
@@ -135,12 +119,29 @@ const fakeData = [
     oldPrice: "200 000",
     newPrice: "100 000",
   },
+  {
+    id: 8,
+    title: "Pirelli Scorpion Verde All Season",
+    size: "235/55 R17",
+    countryImg: hg,
+    countryName: "Венгрия",
+    seasonName: "Всесезонные",
+    seasonImg: season,
+    discount: 23,
+    isNew: true,
+    mainImg: balloon2,
+    rating: 3,
+    price: "2 500 000",
+    oldPrice: "200 000",
+    newPrice: "100 000",
+  },
 ];
 
-export const ContentProducts = ({ view }: any) => {
+export const ContentProducts = () => {
   return (
     <>
-      {view === 0 ? <GridView data={fakeData} /> : <ListView data={fakeData} />}
+      <ListView data={fakeData} />
+      {/* <GridView data={fakeData} /> */}
     </>
   );
 };

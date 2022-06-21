@@ -9,7 +9,7 @@ import { ShoppingCardProducts } from "../../src/components/shopping_card_page_co
 
 import styles from "../../styles/pages/shopping_card_pages/shoppingCardPage.module.scss";
 
-import img from "../../src/images/slide_examples/chair.jpg";
+import img from "../../src/images/fake_photo/balloon2.png";
 
 const fakeData = [
   {
@@ -38,7 +38,7 @@ const fakeData = [
   },
 ];
 
-const shopping_card: NextPage = () => {
+const ShoppingCard: NextPage = (): JSX.Element => {
   return (
     <section className={styles.shoppnig_card}>
       <Container>
@@ -57,4 +57,4 @@ const shopping_card: NextPage = () => {
   );
 };
 
-export default shopping_card;
+export default ShoppingCard;

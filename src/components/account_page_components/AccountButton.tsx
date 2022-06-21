@@ -1,3 +1,4 @@
+import { FC } from "react";
 import styles from "./accountComp.module.scss";
 
 interface AccountButtonInt {
@@ -7,12 +8,12 @@ interface AccountButtonInt {
   onClick?: () => void;
 }
 
-export const AccountButton = ({
+export const AccountButton: FC<AccountButtonInt> = ({
   typebtn,
   text,
   style,
   onClick,
-}: AccountButtonInt) => {
+}): JSX.Element => {
   return (
     <button type={typebtn} className={styles[style]} onClick={onClick}>
       {text}

@@ -1,13 +1,16 @@
 import React from "react";
+
+import { NextPage } from "next";
+import Image from "next/image";
+
 import { Container } from "../../src/components/common_components/container/Container";
 import { BreadCrumbs } from "./../../src/components/common_components/bread_crumbs/BreadCrumbs";
 
 import styles from "../../styles/pages/news/singleNews.module.scss";
-import Image from "next/image";
 
 import img from "../../src/images/slide_examples/chair.jpg";
 
-const SingleNews = () => {
+const SingleNews: NextPage = (): JSX.Element => {
   return (
     <section>
       <Container>

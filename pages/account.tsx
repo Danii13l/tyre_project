@@ -1,14 +1,13 @@
+import { ChangeEvent, useState } from "react";
 import { NextPage } from "next";
+import Link from "next/link";
+
 import { Container } from "../src/components/common_components/container/Container";
-
-import styles from "../styles/pages/account/account.module.scss";
-import { ChangeEvent, MouseEventHandler, useState } from "react";
-
-import { RiEyeCloseLine, RiEyeLine } from "react-icons/ri";
 import { PhoneInput } from "../src/components/account_page_components/PhoneInput";
 import { AccountButton } from "../src/components/account_page_components/AccountButton";
-import Link from "next/link";
 import { InputPrimary } from "../src/components/common_components/input/InputPrimary";
+
+import styles from "../styles/pages/account/account.module.scss";
 
 const buttons = [
   { id: 1, text: "Войти" },
@@ -16,7 +15,7 @@ const buttons = [
   { id: 3, text: "Изменить пороль" },
 ];
 
-const Account: NextPage = () => {
+const Account: NextPage = (): JSX.Element => {
   const [activeButton, setActiveButton] = useState<number>(1);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [regOrChange, setRegOrChange] = useState<boolean>(false);

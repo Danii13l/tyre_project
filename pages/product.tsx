@@ -1,11 +1,12 @@
+import { useState, useCallback } from "react";
+
+import { NextPage } from "next";
+import Image from "next/image";
+
 import { Container } from "../src/components/common_components/container/Container";
 import { SeasonCountry } from "./../src/components/common_components/season_country/SeasonCountry";
 import { Rating } from "./../src/components/common_components/rating/Rating";
 import { BreadCrumbs } from "./../src/components/common_components/bread_crumbs/BreadCrumbs";
-
-import { FC, useState } from "react";
-
-import Image from "next/image";
 
 import Slider from "react-slick";
 
@@ -24,8 +25,9 @@ import season from "../src/images/fake_photo/seasons.svg";
 import balloon from "../src/images/fake_photo/balloon3.png";
 import balloon2 from "../src/images/fake_photo/balloon2.png";
 import Head from "next/head";
+import { ButtonMain } from "../src/components/common_components/button_submit/ButtonMain";
 
-const NextdetailArrow = (props: any) => {
+const NextdetailArrow = (props: any): JSX.Element => {
   const { onClick, nextSlide, className } = props;
   const disabled = className.split(" ")[2];
   return (
@@ -41,7 +43,7 @@ const NextdetailArrow = (props: any) => {
   );
 };
 
-const PrevdetailArrow = (props: any) => {
+const PrevdetailArrow = (props: any): JSX.Element => {
   const { onClick, prevSlide, className } = props;
 
   const disabled = className.split(" ")[2];
@@ -58,7 +60,7 @@ const PrevdetailArrow = (props: any) => {
   );
 };
 
-const Product = () => {
+const Product: NextPage = (): JSX.Element => {
   const images: any[] = [
     { id: 1, img: balloon },
     { id: 2, img: balloon },
@@ -69,18 +71,18 @@ const Product = () => {
 
   const [indexSlide, setIndexSlide] = useState<number>(0);
 
-  const nextSlide = (clb: () => void) => {
+  const nextSlide = useCallback((): void => {
     if (indexSlide + 1 < images.length)
       setIndexSlide((state): number => state + 1);
-  };
+  }, [indexSlide]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback((): void => {
     if (indexSlide - 1 >= 0) setIndexSlide((state): number => state - 1);
-  };
+  }, [indexSlide]);
 
-  const clickSlide = (num: number): (() => void) => {
+  const clickSlide = useCallback((num: number): (() => void) => {
     return (): void => setIndexSlide(num);
-  };
+  }, []);
 
   const settings = {
     dots: false,
@@ -229,13 +231,16 @@ const Product = () => {
               </h4>
 
               <div className="detail_product_add_wrapper">
-                <p className="detail_product_add_qty">Кол</p>
+                <p className="detail_product_add_qty">Кол-во</p>
 
                 <select name="" id="">
                   <option value="">1</option>
                   <option value="">2</option>
                 </select>
-                <button type="button">В корзинку</button>
+
+                <div className="detail_product_add_btn">
+                  <ButtonMain text="В корзинку" type="button" />
+                </div>
 
                 <div className="detail_product_add_tottal">
                   <span>Всего на сумму:</span>

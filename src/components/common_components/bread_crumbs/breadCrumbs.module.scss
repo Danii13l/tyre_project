@@ -4,12 +4,17 @@
 .bread_crumbs {
   display: flex;
   align-items: center;
+
+  .item {
+    display: flex;
+  }
+
   & > * {
     @include fsize_lheight_fwieght_color(14px, 16px, 400, $text2);
   }
-  // a {
-  //   @include fsize_lheight_fwieght_color(14px, 16px, 400, $text2);
-  // }
+  a {
+    @include fsize_lheight_fwieght_color(14px, 16px, 400, $text2);
+  }
   .img_wrapper {
     display: block;
     margin: 0 10px;

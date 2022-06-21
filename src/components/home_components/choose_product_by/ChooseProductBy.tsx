@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useCallback } from "react";
 
 import { Container } from "../../common_components/container/Container";
 import { NextArrow } from "./../../common_components/slider_arrow/NextArrow";
@@ -113,9 +113,9 @@ const fakeData = [
 export const ChooseProductBy: FC = (): JSX.Element => {
   const [activeButton, setAvtiveButton] = useState<number>(1);
 
-  const handleActiveButton = (ev: any) => {
-    setAvtiveButton(+ev.target.dataset.id);
-  };
+  const handleActiveButton = useCallback((id: number): (() => void) => {
+    return () => setAvtiveButton(id);
+  }, []);
 
   const settings = {
     dots: false,
@@ -144,14 +144,14 @@ export const ChooseProductBy: FC = (): JSX.Element => {
         <div className="choose_product_by__inner">
           <div className="choose_product_by__top">
             <div className="choose_product_by__top-buttons">
-              {buttons.map((item) => (
+              {buttons.map(({ id, text }) => (
                 <button
-                  key={item.id}
-                  data-id={item.id}
-                  onClick={handleActiveButton}
-                  className={item.id === activeButton ? "active" : ""}
+                  key={id}
+                  data-id={id}
+                  onClick={handleActiveButton(id)}
+                  className={id === activeButton ? "active" : ""}
                 >
-                  {item.text}
+                  {text}
                 </button>
               ))}
             </div>

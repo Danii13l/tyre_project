@@ -18,7 +18,7 @@ export const Footer: FC = () => {
       <Container>
         <div className={styles.footer_inner}>
           <div className={styles.footer_left_side}>
-            <Link href="#!">
+            <Link href="/" passHref>
               <a className={styles.logo}>
                 <Image src={logo} alt="logo" />
               </a>
@@ -55,7 +55,7 @@ export const Footer: FC = () => {
                     return (
                       <ul key={index}>
                         <li>
-                          <Link href={link.href}>
+                          <Link href={link.href} passHref>
                             <a>{link.name}</a>
                           </Link>
                         </li>
@@ -75,7 +75,7 @@ export const Footer: FC = () => {
                   return (
                     <ul key={index}>
                       <li>
-                        <Link href={link.href}>
+                        <Link href={link.href} passHref>
                           <a> {link.name}</a>
                         </Link>
                         <span>

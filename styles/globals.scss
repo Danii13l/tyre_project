@@ -93,7 +93,7 @@ h6 {
 
 //------------------------------------------------------------------------------------Common Components-----------------------------------------------------------------------------------------------
 
-// modal product
+//  product
 
 .detail_product {
   .product_title {
@@ -299,8 +299,7 @@ h6 {
     margin-right: 16px;
   }
 
-  select,
-  button {
+  select {
     display: block;
     padding: 16px 32px;
     border-radius: 100px;
@@ -310,9 +309,10 @@ h6 {
   select {
     background: $white;
   }
-  button {
-    background: $accent2;
-    @include fsize_lheight_fwieght_color(16px, 16px, 500, $white);
+
+  .detail_product_add_btn {
+    width: 140px;
+    margin-right: 16px;
   }
 }
 

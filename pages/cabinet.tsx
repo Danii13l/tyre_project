@@ -1,6 +1,8 @@
+import { useCallback, useState } from "react";
+import { NextPage } from "next";
+
 import { Container } from "../src/components/common_components/container/Container";
 import { ButtonsLeft } from "../src/components/cabinet_components/buttons_left/ButtonsLeft";
-import { FC, useCallback, useState } from "react";
 import { Settings } from "../src/components/cabinet_components/setting/Settings";
 import { History } from "./../src/components/cabinet_components/history/History";
 import { Orders } from "./../src/components/cabinet_components/orders/Orders";
@@ -24,7 +26,7 @@ const buttons = [
   { id: 4, text: ["Выйти"], type: "link", img: exit },
 ];
 
-const Cabinet: FC = (): JSX.Element => {
+const Cabinet: NextPage = (): JSX.Element => {
   const [activeMenu, setActivePage] = useState<number>(1);
 
   const changeActiveMenu = useCallback((id: number): (() => void) => {

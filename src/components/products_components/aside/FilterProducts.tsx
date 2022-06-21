@@ -1,16 +1,22 @@
-import styles from "./filterProducts.module.scss";
+import { FC } from "react";
 
 import { CustomSelect } from "../../common_components/custom_select/CustomSelect";
-import Select from "react-select";
 import { ButtonMain } from "../../common_components/button_submit/ButtonMain";
 
-const options = [
+import styles from "./filterProducts.module.scss";
+
+interface optionsInt {
+  value: string;
+  label: string;
+}
+
+const options: optionsInt[] = [
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
   { value: "vanilla", label: "Vanilla" },
 ];
 
-export const FilterProducts = () => {
+export const FilterProducts: FC = (): JSX.Element => {
   return (
     <aside className={styles.filter_products}>
       <h2 className={styles.title}>Фильтры</h2>
@@ -65,16 +71,6 @@ export const FilterProducts = () => {
             labelText="Диаметр"
             isLabel
           />
-        </div>
-
-        <label className={styles.select_index_loading_label}>
-          Индекс нагрузки(кг)
-        </label>
-        <div
-          className={`${styles.filter_select_wrapper} ${styles.select_index_loading}`}
-        >
-          <CustomSelect options={options} placehold="400" />
-          <CustomSelect options={options} placehold="45000" />
         </div>
       </div>
 

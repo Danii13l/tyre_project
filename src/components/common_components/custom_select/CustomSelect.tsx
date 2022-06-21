@@ -1,3 +1,4 @@
+import { FC } from "react";
 import Select from "react-select";
 
 interface optionInt {
@@ -12,12 +13,12 @@ interface selectInt {
   labelText?: string;
 }
 
-export const CustomSelect = ({
+export const CustomSelect: FC<selectInt> = ({
   options,
   placehold,
   labelText,
   isLabel,
-}: selectInt) => {
+}): JSX.Element => {
   return (
     <>
       {isLabel && <label className="label_main_select">{labelText}</label>}

@@ -44,14 +44,14 @@ const links: linksInt[] = [
   },
 ];
 
-export const TypesCars = ({ isBig }: typesCarsInt): JSX.Element => {
+export const TypesCars: FC<typesCarsInt> = ({ isBig }): JSX.Element => {
   const activeInd = !isBig ? 1 : 0;
   return (
     <div>
       <div className={`${styles.items_wrapper} ${isBig ? styles.big : ""}`}>
         {links.map(({ id, href, name, img, name2 }) => {
           return (
-            <Link href={href} key={id}>
+            <Link href={href} key={id} passHref>
               <a
                 className={`${styles.link} ${
                   activeInd === id ? styles.active : ""

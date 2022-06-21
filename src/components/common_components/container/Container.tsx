@@ -1,5 +1,10 @@
+import { FC } from "react";
 import styles from "./container.module.scss";
 
-export const Container = ({ children }: any) => {
+import { StandardComponentProps } from "../../../interfaces/StandardComponentProps";
+
+export const Container: FC<StandardComponentProps> = ({
+  children,
+}): JSX.Element => {
   return <div className={styles.container}>{children}</div>;
 };

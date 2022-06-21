@@ -1,13 +1,15 @@
+import { useRouter } from "next/router";
+import { FC } from "react";
+
+import styles from "./ShoppingCardOrder.module.scss";
+
 const data = [
   { id: 1, order: "01", text: "Shopping Cart", path: "/shopping_card" },
   { id: 2, order: "02", text: "Check Out" },
   { id: 3, order: "03", text: "Order Complete" },
 ];
 
-import styles from "./ShoppingCardOrder.module.scss";
-import { useRouter } from "next/router";
-
-export const ShoppingCardOrder = () => {
+export const ShoppingCardOrder: FC = (): JSX.Element => {
   const urlPath = useRouter();
   const active = urlPath.pathname.split("/").filter((item) => item.length > 0);
 

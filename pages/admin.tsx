@@ -1,8 +1,11 @@
+import { NextPage } from "next";
+
 import { TopAdmin } from "../src/components/admin/top/TopAdmin";
-import styles from "../styles/pages/admin/admin.module.scss";
 import { AsideAdmin } from "./../src/components/admin/aside/asideAdmin";
 
-const Admin = () => {
+import styles from "../styles/pages/admin/admin.module.scss";
+
+const Admin: NextPage = (): JSX.Element => {
   return (
     <div className={styles.admin}>
       <AsideAdmin />

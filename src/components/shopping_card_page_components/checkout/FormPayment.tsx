@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MouseEventHandler, ReactElement, useState } from "react";
+import { FC, useState } from "react";
 
 import { CustomSelect } from "../../common_components/custom_select/CustomSelect";
 import { BottonNext } from "../button_next/BottonNext";
@@ -51,11 +51,10 @@ const fakePayment = [
   },
 ];
 
-export const FormPayment = () => {
+export const FormPayment: FC = (): JSX.Element => {
   const [payMethod, setPayMethod] = useState<number | string>(0);
 
   const showPayMethod = (ev: any): void => {
-    console.log(ev.target.id);
     setPayMethod(ev.target.id);
   };
 

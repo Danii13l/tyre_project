@@ -1,13 +1,14 @@
-import { BreadCrumbs } from "../../src/components/common_components/bread_crumbs/BreadCrumbs";
-import { Container } from "./../../src/components/common_components/container/Container";
-
-import styles from "../../styles/pages/news/news..module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { NextPage } from "next";
 
-import image from "../../src/images/slide_examples/chair.jpg";
-
+import { BreadCrumbs } from "../../src/components/common_components/bread_crumbs/BreadCrumbs";
+import { Container } from "./../../src/components/common_components/container/Container";
 import { checkLength } from "./../../src/functions/checkLength";
+
+import styles from "../../styles/pages/news/news..module.scss";
+
+import image from "../../src/images/fake_photo/balloon2.png";
 
 const fakeData = [
   {
@@ -47,7 +48,7 @@ const fakeData = [
   },
 ];
 
-const News = () => {
+const News: NextPage = (): JSX.Element => {
   return (
     <section>
       <Container>

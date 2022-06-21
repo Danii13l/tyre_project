@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image, { StaticImageData } from "next/image";
 
 import { LinkTo } from "../../common_components/link_to/LinkTo";
 import { Container } from "../../common_components/container/Container";
@@ -6,17 +7,16 @@ import { Darkening } from "../../common_components/darkening/Darkening";
 
 import styles from "./newProduct.module.scss";
 
+import malibu from "../../../images/fake_photo/malibu.jpg";
+import gentra from "../../../images/fake_photo/gentra.jpg";
+import spark from "../../../images/fake_photo/spark.jpg";
+
 interface newProductInt {
   id: number;
   href: string;
   img: string | StaticImageData;
   text: string;
 }
-
-import malibu from "../../../images/fake_photo/malibu.jpg";
-import gentra from "../../../images/fake_photo/gentra.jpg";
-import spark from "../../../images/fake_photo/spark.jpg";
-import Image, { StaticImageData } from "next/image";
 
 const newProductItems: newProductInt[] = [
   {

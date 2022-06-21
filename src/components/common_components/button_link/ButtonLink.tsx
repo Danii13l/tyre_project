@@ -8,7 +8,7 @@ interface buttonLinkInt {
 
 export const ButtonLink = ({ href, text }: buttonLinkInt) => {
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <a className={styles.link}>{text}</a>
     </Link>
   );

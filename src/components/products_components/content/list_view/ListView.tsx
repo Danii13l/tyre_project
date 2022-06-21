@@ -6,8 +6,8 @@ import { Rating } from "../../../common_components/rating/Rating";
 import { SeasonCountry } from "../../../common_components/season_country/SeasonCountry";
 
 import frame from "../../../../images/common/big_card_frame.svg";
-import share from "../../../../images/icons/share2.svg";
-import favorite from "../../../../images/icons/favorite2.svg";
+
+import { FC } from "react";
 
 interface dataInt {
   id: number;
@@ -26,10 +26,10 @@ interface dataInt {
   newPrice?: string;
 }
 
-export const ListView = ({ data }: any): JSX.Element => {
+export const ListView: FC<any> = ({ data }): JSX.Element => {
   return (
     <>
-      {data.map((item: dataInt) => {
+      {data.map((item: any) => {
         return (
           <div key={item.id} className={styles.list}>
             <div className={styles.img_block}>

@@ -1,8 +1,10 @@
+import { FC } from "react";
+
 import { BigCard } from "../../../common_components/big_card/BigCard";
 
 import styles from "./girdView.module.scss";
 
-export const GridView = ({ data }: any) => {
+export const GridView: FC = ({ data }: any): JSX.Element => {
   return (
     <div className={styles.grid}>
       {data.map((item: any) => (

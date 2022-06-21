@@ -12,12 +12,10 @@ interface navlinkProps {
 export const NavLink = ({ href, exact, children, ...props }: navlinkProps) => {
   const { pathname } = useRouter();
 
-  console.log(pathname);
-
   const isActive = exact ? pathname === href : pathname.startsWith(href);
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <a {...props} className={isActive ? styles.link : ""}>
         {children}
       </a>

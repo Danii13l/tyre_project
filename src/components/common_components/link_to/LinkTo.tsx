@@ -16,7 +16,7 @@ import arrow_white from "../../../images/linkTo/Pagination__navigation-white.svg
 
 export const LinkTo = ({ href, y, x, text }: Props) => {
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <a className={`${styles.link_to} ${styles[y]} ${styles[x]}`}>
         {text}
         <span>

@@ -1,14 +1,16 @@
-import { Container } from "../../common_components/container/Container";
+import { FC } from "react";
 
 import Slider from "react-slick";
 
 import { NextArrow } from "../../common_components/slider_arrow/NextArrow";
 import { PrevArrow } from "../../common_components/slider_arrow/PrevArrow";
-
-import china from "../../../images/fake_photo/HU.png";
-import balloon2 from "../../../images/fake_photo/balloon2.png";
 import { SmallCard } from "./../../common_components/small_card/SmallCard";
 import { ButtonLink } from "../../common_components/button_link/ButtonLink";
+import { Container } from "../../common_components/container/Container";
+
+// fake
+import china from "../../../images/fake_photo/HU.png";
+import balloon2 from "../../../images/fake_photo/balloon2.png";
 
 const fakeData = [
   {
@@ -91,7 +93,7 @@ const fakeData = [
   },
 ];
 
-export const SubCategory = () => {
+export const SubCategory: FC = (): JSX.Element => {
   const settings = {
     dots: false,
     speed: 500,

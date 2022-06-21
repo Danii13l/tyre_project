@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+
 import Image from "next/image";
 
 import { Container } from "../../common_components/container/Container";
@@ -10,6 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// fake
 import slides from "../../../images/fake_photo/hero_slider.png";
 import michelin from "../../../images/fake_photo/michelin.jpg";
 import brid from "../../../images/fake_photo/bridgestone.jpg";

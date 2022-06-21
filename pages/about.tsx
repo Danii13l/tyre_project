@@ -1,11 +1,14 @@
+import { FC } from "react";
+import { NextPage } from "next";
 import Image from "next/image";
+
 import { BreadCrumbs } from "../src/components/common_components/bread_crumbs/BreadCrumbs";
 import { Container } from "../src/components/common_components/container/Container";
-
-import styles from "../styles/pages/about/about.module.scss";
 import { social } from "../src/constants/constSocial";
 
-const About = () => {
+import styles from "../styles/pages/about/about.module.scss";
+
+const About: NextPage = (): JSX.Element => {
   return (
     <section>
       <Container>

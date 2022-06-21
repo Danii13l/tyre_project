@@ -21,14 +21,14 @@ export const BreadCrumbs = ({ list, last }: BreadCrumbsInt) => {
     <div className={styles.bread_crumbs}>
       {list.map((item) => {
         return (
-          <>
-            <Link href={item.href} key={item.id}>
+          <div key={item.id} className={styles.item}>
+            <Link href={item.href} passHref>
               <a>{item.text}</a>
             </Link>
             <span className={styles.img_wrapper}>
               <Image src={arrow} alt="arrow" width={7} height={8} />
             </span>
-          </>
+          </div>
         );
       })}
       <span>{last}</span>

@@ -6,6 +6,7 @@ import { Language } from "./language_select/Language";
 
 import Link from "next/link";
 import Image from "next/image";
+
 import styles from "./header.module.scss";
 
 import logo from "../../../images/common/logo.svg";
@@ -17,14 +18,14 @@ import {
   bottomNavbarLinks,
 } from "../../../constants/constHeader";
 
-export const Header: FC = () => {
+export const Header: FC = (): JSX.Element => {
   return (
     <header>
       <nav className={styles.navbar}>
         <Container>
           <div className={styles.navbar_inner}>
             <div className={styles.navbar_left_side}>
-              <Link href="/">
+              <Link href="/" passHref>
                 <a className={styles.logo}>
                   <Image src={logo} alt="logo" />
                 </a>
@@ -58,6 +59,26 @@ export const Header: FC = () => {
                         </li>
                       );
                     })}
+                    <li>
+                      <NavLink href="/account" exact={false}>
+                        Аккаунт
+                      </NavLink>
+                    </li>
+                    <li>
+                      <Link href="/cabinet" passHref>
+                        <a className={styles.cabinet}>
+                          <div className={styles.cabinet_img_wrapper}>
+                            <Image
+                              src={"/avatar.png"}
+                              alt="user"
+                              layout="fill"
+                            />
+                          </div>
+
+                          <span className={styles.cabinet_name}>Umid H.</span>
+                        </a>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
 

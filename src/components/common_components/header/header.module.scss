@@ -68,7 +68,22 @@
           border-right: none;
         }
       }
+
+      .cabinet {
+        @include dflex_jcontent_aitems(stretch, center);
+        height: 100%;
+
+        .cabinet_img_wrapper {
+          position: relative;
+          @include width_height(18px, 18px);
+          margin-right: 8px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-bottom: -1px;
+        }
+      }
     }
+
     .bottom_navbar_link {
       li {
         margin-left: 31px;
