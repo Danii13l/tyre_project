@@ -47,7 +47,7 @@ const ShoppingCard: NextPage = (): JSX.Element => {
             list={[{ id: 1, href: "/", text: "Home" }]}
             last="Shopping Cart"
           />
-          <h1 className={styles.shoppnig_card_title}>Shooping Card</h1>
+          <h1 className={styles.shoppnig_card_title}>Покупки</h1>
 
           <ShoppingCardOrder />
           <ShoppingCardProducts data={fakeData} />

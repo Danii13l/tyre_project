@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap");
 
 @import "./variables.module.scss";
 @import "./mixins.module.scss";
@@ -524,7 +524,12 @@ h6 {
 }
 
 .sub_category__button_link_wrapper {
-  @include dflex_jcontent_aitems(center, center);
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+  button {
+    padding: 9px;
+  }
 }
 
 //--------------------Select----------------------------------------------

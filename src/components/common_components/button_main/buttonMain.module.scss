@@ -4,7 +4,7 @@
 .button {
   @include dflex_jcontent_aitems(center, center);
   width: 100%;
-  height: 52px;
+  padding: 15px;
   background: $accent2;
   border-radius: 100px;
   @include fsize_lheight_fwieght_color(16px, 22px, 500, $white);
@@ -13,6 +13,12 @@
     background: transparent;
     border: 1px solid $accent2;
     color: $accent2;
+  }
+
+  &.third {
+    color: $accent;
+    border: 1px solid $light;
+    background-color: $white;
   }
   span {
     margin-right: 10px;

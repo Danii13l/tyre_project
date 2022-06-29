@@ -41,9 +41,6 @@
 
 .change_form {
   max-width: 506px;
-  input {
-    margin-bottom: 16px;
-  }
 }
 
 .change_title {
@@ -87,7 +84,7 @@
   }
 }
 
-.input_wrapper {
+.inputs_wrapper {
   background-color: $white;
   padding: 32px;
   margin-bottom: 32px;
@@ -95,18 +92,13 @@
   border-radius: 6px;
 }
 
+.input_wrapper {
+  margin-bottom: 16px;
+}
+
 .change_inputs_label {
   display: block;
   margin-bottom: 5px;
-}
-
-.password_wrapper {
-  input {
-    margin-bottom: 0;
-    &:first-child {
-      margin-bottom: 16px;
-    }
-  }
 }
 
 .btn_submit {

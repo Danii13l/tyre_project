@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { CustomSelect } from "../../common_components/custom_select/CustomSelect";
-import { ButtonMain } from "../../common_components/button_submit/ButtonMain";
+import { ButtonMain } from "../../common_components/button_main/ButtonMain";
 
 import styles from "./filterProducts.module.scss";
 

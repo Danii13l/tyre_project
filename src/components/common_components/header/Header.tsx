@@ -59,12 +59,8 @@ export const Header: FC = (): JSX.Element => {
                         </li>
                       );
                     })}
-                    <li>
-                      <NavLink href="/account" exact={false}>
-                        Аккаунт
-                      </NavLink>
-                    </li>
-                    <li>
+                    <li>Аккаунт</li>
+                    {/* <li>
                       <Link href="/cabinet" passHref>
                         <a className={styles.cabinet}>
                           <div className={styles.cabinet_img_wrapper}>
@@ -78,7 +74,7 @@ export const Header: FC = (): JSX.Element => {
                           <span className={styles.cabinet_name}>Umid H.</span>
                         </a>
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
 

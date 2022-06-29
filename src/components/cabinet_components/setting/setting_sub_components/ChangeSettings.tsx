@@ -2,34 +2,46 @@ import { FC, useEffect, useRef, useState, useCallback } from "react";
 
 import Image from "next/image";
 
+import { useFormik, FormikProps } from "formik";
+import * as yup from "yup";
+
+import { ButtonMain } from "../../../common_components/button_main/ButtonMain";
+import { PhoneInput } from "../../../common_components/input/PhoneInput";
+import { PasswordInput } from "../../../common_components/input/PasswordInput";
+import { TextInput } from "./../../../common_components/input/TextInput";
+
 import styles from "../settings.module.scss";
 
-import { InputPrimary } from "../../../common_components/input/InputPrimary";
-import { ButtonMain } from "../../../common_components/button_submit/ButtonMain";
+interface formsInt {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
+}
 
-const inputs = [
-  {
-    id: 1,
-    type: "text",
-    name: "username",
-    labelFor: "username",
-    labelText: "Имя",
-  },
-  {
-    id: 2,
-    type: "text",
-    name: "surname",
-    labelFor: "surname",
-    labelText: "Фамилия",
-  },
-  {
-    id: 3,
-    type: "tel",
-    name: "tel",
-    labelFor: "tel",
-    labelText: "Номер телефона",
-  },
-];
+const schema = yup.object().shape({
+  firstName: yup
+    .string()
+    .min(2, "Имя должно быть не меньше 2 символов")
+    .required("Обязательное поле"),
+  lastName: yup
+    .string()
+    .min(2, "Имя должно быть не меньше 2 символов")
+    .required("Обязательное поле"),
+  password: yup
+    .string()
+    .min(8, "Пароль должнен быть не меньше 8 символов")
+    .required("Обязательное поле"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Пароли не совпадают")
+    .required("Обязательное поле"),
+  phone: yup
+    .string()
+    .matches(/\(\d\d\) \d\d\d-\d\d-\d\d/, "Неверный формат")
+    .required("Телефон обязательно для заполнения"),
+});
 
 export const ChangeSettings: FC = (): JSX.Element => {
   const [photo, setPhoto] = useState<File | null>(null);
@@ -55,10 +67,22 @@ export const ChangeSettings: FC = (): JSX.Element => {
     }
   }, [photo]);
 
+  const formik: FormikProps<formsInt> = useFormik<formsInt>({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      password: "",
+      confirmPassword: "",
+      phone: "",
+    },
+    validationSchema: schema,
+    onSubmit: (values) => alert(values),
+  });
+
   return (
     <div>
       <h3 className={styles.change_title}>Личные данные</h3>
-      <form action="" className={styles.change_form}>
+      <form className={styles.change_form} onSubmit={formik.handleSubmit}>
         <div className={styles.put_photo_wrapper}>
           <div className={styles.put_photo_img_wrapper}>
             <Image
@@ -91,42 +115,69 @@ export const ChangeSettings: FC = (): JSX.Element => {
           </div>
         </div>
 
-        <div className={styles.input_wrapper}>
-          {inputs.slice(0, 4).map(({ id, type, name, labelFor, labelText }) => {
-            return (
-              <InputPrimary
-                key={id}
-                type={type}
-                name={name}
-                labelFor={labelFor}
-                labelText={labelText}
-              />
-            );
-          })}
+        <div className={styles.inputs_wrapper}>
+          <div className={styles.input_wrapper}>
+            <TextInput
+              name="firstName"
+              labelText="Имя"
+              value={formik.values.firstName}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              isError={formik.errors.firstName}
+              isTouched={formik.touched.firstName}
+            />
+          </div>
+          <div className={styles.input_wrapper}>
+            <TextInput
+              name="lastName"
+              labelText="Фамилия"
+              value={formik.values.lastName}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              isError={formik.errors.lastName}
+              isTouched={formik.touched.lastName}
+            />
+          </div>
+          <PhoneInput
+            name="phone"
+            labelText="Номер телефона"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            isError={formik.errors.phone}
+            isTouched={formik.touched.phone}
+          />
         </div>
 
         <h3 className={styles.change_title}>Новый пароль</h3>
 
-        <div className={styles.input_wrapper}>
+        <div className={styles.inputs_wrapper}>
           <div className={styles.password_wrapper}>
-            <InputPrimary
-              type="password"
-              name="password"
-              labelFor="password"
-              labelText="Пароль"
-            />
+            <div className={styles.input_wrapper}>
+              <PasswordInput
+                name="password"
+                labelText="Пароль"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                isError={formik.errors.password}
+                isTouched={formik.touched.password}
+              />
+            </div>
 
-            <InputPrimary
-              type="password"
-              name="password_confirm"
-              labelFor="password_confirm"
+            <PasswordInput
+              name="confirmPassword"
               labelText="Подтвердить пароль"
+              value={formik.values.confirmPassword}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              isError={formik.errors.confirmPassword}
+              isTouched={formik.touched.confirmPassword}
             />
           </div>
         </div>
 
         <div className={styles.btn_submit}>
-          <ButtonMain text="Сохранить" type="button" />
+          <ButtonMain text="Сохранить" type="submit" />
         </div>
       </form>
     </div>

@@ -12,7 +12,7 @@ import to_pay from "../../../images/icons/to_pay.svg";
 import close from "../../../images/icons/close_x.svg";
 
 import fakeImg from "../../../images/fake_photo/balloon2.png";
-import { ButtonMain } from "../button_submit/ButtonMain";
+import { ButtonMain } from "../button_main/ButtonMain";
 
 const fakeData = [
   {

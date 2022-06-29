@@ -4,9 +4,9 @@ import { FC } from "react";
 import styles from "./ShoppingCardOrder.module.scss";
 
 const data = [
-  { id: 1, order: "01", text: "Shopping Cart", path: "/shopping_card" },
-  { id: 2, order: "02", text: "Check Out" },
-  { id: 3, order: "03", text: "Order Complete" },
+  { id: 1, order: "01", text: "Корзина", path: "/shopping_card" },
+  { id: 2, order: "02", text: "Ваши данные" },
+  { id: 3, order: "03", text: "Оплата" },
 ];
 
 export const ShoppingCardOrder: FC = (): JSX.Element => {

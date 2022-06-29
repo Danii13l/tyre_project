@@ -8,6 +8,8 @@ interface BtnSubInt {
   type: "button" | "submit";
   img?: string | StaticImageData;
   second?: boolean;
+  third?: boolean;
+  onClick?: () => void;
 }
 
 export const ButtonMain: FC<BtnSubInt> = ({
@@ -15,11 +17,16 @@ export const ButtonMain: FC<BtnSubInt> = ({
   type,
   img,
   second,
+  third,
+  onClick,
 }): JSX.Element => {
   return (
     <button
       type={type}
-      className={`${styles.button} ${second ? styles.second : ""}`}
+      className={`${styles.button} ${second ? styles.second : ""} ${
+        third ? styles.third : ""
+      }`}
+      onClick={() => (onClick ? onClick() : null)}
     >
       {img && (
         <span>

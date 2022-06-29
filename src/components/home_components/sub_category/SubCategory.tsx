@@ -5,12 +5,14 @@ import Slider from "react-slick";
 import { NextArrow } from "../../common_components/slider_arrow/NextArrow";
 import { PrevArrow } from "../../common_components/slider_arrow/PrevArrow";
 import { SmallCard } from "./../../common_components/small_card/SmallCard";
-import { ButtonLink } from "../../common_components/button_link/ButtonLink";
+
 import { Container } from "../../common_components/container/Container";
 
 // fake
 import china from "../../../images/fake_photo/HU.png";
 import balloon2 from "../../../images/fake_photo/balloon2.png";
+import Link from "next/link";
+import { ButtonMain } from "../../common_components/button_main/ButtonMain";
 
 const fakeData = [
   {
@@ -136,9 +138,12 @@ export const SubCategory: FC = (): JSX.Element => {
             </Slider>
           </div>
           {/* button */}
-          <div className="sub_category__button_link_wrapper">
-            <ButtonLink href="#!" text="Показать все" />
-          </div>
+
+          <Link href="#!">
+            <a className="sub_category__button_link_wrapper">
+              <ButtonMain text="Показать все" type="button" third />
+            </a>
+          </Link>
         </div>
       </Container>
     </div>

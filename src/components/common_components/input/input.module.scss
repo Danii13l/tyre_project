@@ -35,6 +35,10 @@
 }
 
 .input_password_wrapper {
+  input::-ms-reveal,
+  input::-ms-clear {
+    display: none;
+  }
   position: relative;
   input {
     padding: 8px 40px 8px 16px;
@@ -54,7 +58,7 @@
   position: relative;
 
   input {
-    padding: 8px 16px 8px 50px;
+    padding: 8px 16px 8px 55px;
   }
 
   div {
@@ -64,4 +68,14 @@
     transform: translateY(-50%);
     @include fsize_lheight_fwieght_color(14px, 19px, 400, $accent);
   }
+}
+
+.error {
+  @include fsize_lheight_fwieght_color(12px, 16px, 500, #ff7a7a);
+  margin-top: 4px;
+}
+
+.errorInput {
+  background: #fff2f2;
+  border: 1px solid #ff7a7a;
 }

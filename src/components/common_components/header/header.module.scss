@@ -59,6 +59,8 @@
       li {
         padding: 1px 30px;
         border-right: 2px solid $text2;
+        @include fsize_lheight_fwieght_color(16px, 16px, 600, $text2);
+        cursor: pointer;
         a {
           @include fsize_lheight_fwieght_color(16px, 16px, 600, $text2);
         }
@@ -79,7 +81,6 @@
           margin-right: 8px;
           border-radius: 50%;
           overflow: hidden;
-          margin-bottom: -1px;
         }
       }
     }

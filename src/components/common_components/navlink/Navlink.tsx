@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -9,7 +11,12 @@ interface navlinkProps {
   children: any;
 }
 
-export const NavLink = ({ href, exact, children, ...props }: navlinkProps) => {
+export const NavLink: FC<navlinkProps> = ({
+  href,
+  exact,
+  children,
+  ...props
+}): JSX.Element => {
   const { pathname } = useRouter();
 
   const isActive = exact ? pathname === href : pathname.startsWith(href);

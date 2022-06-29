@@ -1,0 +1,121 @@
+@import "../../../styles/variables.module.scss";
+@import "../../../styles/mixins.module.scss";
+
+.account {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.311);
+  @include width_height(100%, 100%);
+  @include dflex_jcontent_aitems(center, center);
+}
+
+.account_inner {
+  @include width_height(1010px, 725px);
+  background-color: $background-grey;
+  border: 1px solid $light;
+  border-radius: 6px;
+  padding: 120px 200px;
+  position: relative;
+}
+
+.title {
+  @include fsize_lheight_fwieght_color(24px, 33px, 600, $accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.text {
+  @include fsize_lheight_fwieght_color(16px, 22px, 400, $accent);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.account_forms {
+  width: 600px;
+}
+
+.buttons_wrapper {
+  display: flex;
+  .button {
+    @include dflex_jcontent_aitems(center, center);
+    flex: 1;
+    padding: 16px;
+    @include fsize_lheight_fwieght_color(16px, 20px, 500, $text2);
+    background: $background-grey2;
+    border: 1px solid $light;
+
+    &.active {
+      background: $white;
+      color: $accent;
+    }
+    span {
+      margin-left: 8px;
+      display: block;
+    }
+  }
+}
+
+.inputs_wrapper {
+  background-color: $white;
+  padding: 32px 64px;
+  border: 1px solid $light;
+  margin-bottom: 32px;
+}
+
+.input_wrapper {
+  margin-bottom: 16px;
+}
+
+.forgot_password_text {
+  margin-top: 32px;
+  text-align: center;
+  @include fsize_lheight_fwieght_color(14px, 19px, 500, $text2);
+  cursor: pointer;
+}
+
+.sms {
+  @include fsize_lheight_fwieght_color(14px, 19px, 500, $accent);
+  padding: 9px;
+  background: $background-grey2;
+  border-radius: 4px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.cancel_submit_buttons {
+  display: flex;
+
+  button {
+    flex: 1;
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
+.resend {
+  @include dflex_jcontent_aitems(center, center);
+  flex-direction: column;
+  margin-top: 16px;
+  button {
+    background-color: transparent;
+    @include fsize_lheight_fwieght_color(14px, 19px, 500, $text2);
+    margin-bottom: 4px;
+  }
+
+  p {
+    @include fsize_lheight_fwieght_color(12px, 16px, 400, $accent);
+
+    span {
+      display: inline-block;
+      margin: 0 3px;
+    }
+  }
+}
+
+.close_account {
+  @include pos_absolute(20px, auto, auto, 20px);
+  cursor: pointer;
+}

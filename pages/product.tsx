@@ -25,7 +25,7 @@ import season from "../src/images/fake_photo/seasons.svg";
 import balloon from "../src/images/fake_photo/balloon3.png";
 import balloon2 from "../src/images/fake_photo/balloon2.png";
 import Head from "next/head";
-import { ButtonMain } from "../src/components/common_components/button_submit/ButtonMain";
+import { ButtonMain } from "../src/components/common_components/button_main/ButtonMain";
 
 const NextdetailArrow = (props: any): JSX.Element => {
   const { onClick, nextSlide, className } = props;

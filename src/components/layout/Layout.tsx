@@ -8,6 +8,7 @@ import { StandardComponentProps } from "../../interfaces/StandardComponentProps"
 import { ShoppingCardSidebar } from "../common_components/shopping_card_sidebar/ShoppingCardSidebar";
 
 import { useRouter } from "next/router";
+import { Account } from "./../account/Account";
 
 export const Layout: FC<StandardComponentProps> = ({
   children,
@@ -17,8 +18,9 @@ export const Layout: FC<StandardComponentProps> = ({
   return (
     <div>
       {pathname !== "/admin" && <Header />}
-      {/* <ModalProduct /> */}
       {children}
+      {/* <Account /> */}
+
       {/* {pathname !== "/admin" && <Footer />} */}
       {/* <ShoppingCardSidebar /> */}
     </div>
