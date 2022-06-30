@@ -4,13 +4,11 @@ import tg from "../images/social/Telegram.svg";
 import wapp from "../images/social/WhatsApp.svg";
 import youtube from "../images/social/YouTube.svg";
 
-import phone from "../images/footer/phone-enabled.svg";
-import location from "../images/footer/location-on.svg";
-import email from "../images/footer/mail-outline.svg";
+import { Url } from "url";
 
 interface imagesArray {
   id: number;
-  href: string;
+  href: string | Url;
   img: string;
 }
 
@@ -23,7 +21,7 @@ export const socialImages: imagesArray[] = [
 ];
 
 interface subLinks {
-  href: string;
+  href: string | Url;
   name: string;
   img?: any;
 }
@@ -68,23 +66,6 @@ export const footerLinks: footerLinksArray[] = [
       { href: "#!", name: "Wish List" },
       { href: "#!", name: "Shopping Cart" },
       { href: "#!", name: "Checkout" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Information",
-    links: [
-      {
-        href: "",
-        name: "Connaugt Road Central Suite 18B, 148  New Yankee",
-        img: location,
-      },
-      { href: "tel:+15553332211", name: "+1 (555) 333 22 11", img: phone },
-      {
-        href: "mailto:info@boomerang.store",
-        name: "info@boomerang.store",
-        img: email,
-      },
     ],
   },
 ];

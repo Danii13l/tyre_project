@@ -4,13 +4,15 @@ import Image from "next/image";
 import { FC } from "react";
 
 import { Container } from "../container/Container";
+import { footerLinks } from "../../../constants/constFooter";
+import { social } from "../../../constants/constSocial";
 
 import styles from "./footer.module.scss";
 
 import logo from "../../../images/common/logo.svg";
-
-import { footerLinks } from "../../../constants/constFooter";
-import { social } from "../../../constants/constSocial";
+import phone from "../../../images/footer/phone-enabled.svg";
+import location from "../../../images/footer/location-on.svg";
+import email from "../../../images/footer/mail-outline.svg";
 
 export const Footer: FC = () => {
   return (
@@ -67,27 +69,33 @@ export const Footer: FC = () => {
             })}
           </div>
 
-          {footerLinks.slice(3).map((item) => {
-            return (
-              <div key={item.id} className={styles.footer_right_side}>
-                <h4>{item.title}</h4>
-                {item.links.map((link, index) => {
-                  return (
-                    <ul key={index}>
-                      <li>
-                        <Link href={link.href} passHref>
-                          <a> {link.name}</a>
-                        </Link>
-                        <span>
-                          <Image src={link.img} alt="icons" />
-                        </span>
-                      </li>
-                    </ul>
-                  );
-                })}
-              </div>
-            );
-          })}
+          <div className={styles.footer_right_side}>
+            <h4>Information</h4>
+
+            <ul>
+              <li>
+                <p> Connaugt Road Central Suite 18B, 148 New Yankee</p>
+                <span>
+                  <Image src={location} alt="icons" />
+                </span>
+              </li>
+
+              <li>
+                <a href="tel:+15553332211"> +1 (555) 333 22 11</a>
+                <span>
+                  <Image src={phone} alt="icons" />
+                </span>
+              </li>
+
+              <li>
+                <a href="mailto:info@boomerang.store">info@boomerang.store</a>
+
+                <span>
+                  <Image src={email} alt="icons" />
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </Container>
     </footer>

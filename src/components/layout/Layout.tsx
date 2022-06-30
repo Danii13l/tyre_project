@@ -21,7 +21,7 @@ export const Layout: FC<StandardComponentProps> = ({
       {children}
       {/* <Account /> */}
 
-      {/* {pathname !== "/admin" && <Footer />} */}
+      {pathname !== "/admin" && <Footer />}
       {/* <ShoppingCartSidebar /> */}
     </div>
   );
