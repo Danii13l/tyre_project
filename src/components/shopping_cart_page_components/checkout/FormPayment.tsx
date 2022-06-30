@@ -2,7 +2,6 @@ import Link from "next/link";
 import { FC, useState } from "react";
 
 import { CustomSelect } from "../../common_components/custom_select/CustomSelect";
-import { BottonNext } from "../button_next/BottonNext";
 
 import styles from "./formPayment.module.scss";
 
@@ -61,10 +60,6 @@ export const FormPayment: FC = (): JSX.Element => {
   return (
     <div className={styles.form_payment}>
       <form className={styles.form}>
-        <div className={styles.select}>
-          <CustomSelect options={fakeoptions} placehold="dct" />
-        </div>
-
         <div className={styles.inputs_wrapper}>
           <input placeholder="Name" className={styles.input} />
           <input placeholder="Last Name" className={styles.input} />
@@ -170,10 +165,6 @@ export const FormPayment: FC = (): JSX.Element => {
               I’ve read & accept the terms & conditions
             </label>
             <input type="checkbox" id="agree" />
-          </div>
-
-          <div className={styles.next_page_link}>
-            <BottonNext href="!#" text="PROCEED TO Order Complete" />
           </div>
         </div>
       </div>

@@ -11,6 +11,8 @@ interface selectInt {
   placehold: string;
   isLabel?: boolean;
   labelText?: string;
+  id: string;
+  instanceId: string;
 }
 
 export const CustomSelect: FC<selectInt> = ({
@@ -18,11 +20,15 @@ export const CustomSelect: FC<selectInt> = ({
   placehold,
   labelText,
   isLabel,
+  id,
+  instanceId,
 }): JSX.Element => {
   return (
     <>
       {isLabel && <label className="label_main_select">{labelText}</label>}
       <Select
+        id={id}
+        instanceId={instanceId}
         options={options}
         placeholder={placehold}
         isSearchable={false}

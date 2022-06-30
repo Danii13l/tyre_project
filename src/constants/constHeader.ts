@@ -5,7 +5,7 @@ interface navbarLinks {
 
 export const topNavbarLinks: navbarLinks[] = [
   { href: "/favourite", name: "Избранное" },
-  { href: "/shopping_card", name: "Корзина" },
+  { href: "/shopping_cart", name: "Корзина" },
 ];
 
 export const bottomNavbarLinks: navbarLinks[] = [

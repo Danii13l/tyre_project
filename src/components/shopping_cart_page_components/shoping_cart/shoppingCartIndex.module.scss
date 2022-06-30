@@ -1,0 +1,54 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
+.shoppingCartIndex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products {
+  width: 100%;
+}
+
+.total {
+  min-width: 390px;
+  max-width: 390px;
+  margin-left: 21px;
+  align-self: flex-start;
+  background: $background-grey;
+  border-radius: 6px;
+  padding: 32px 16px;
+
+  h3 {
+    @include fsize_lheight_fwieght_color(24px, 20px, 700, $accent);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .total_count,
+  .total_price {
+    padding: 20px 16px;
+    background-color: $white;
+    border-radius: 4px;
+    @include dflex_jcontent_aitems(space-between, center);
+    p {
+      @include fsize_lheight_fwieght_color(16px, 22px, 500, $accent);
+    }
+  }
+
+  .total_count {
+    margin-bottom: 16px;
+    span {
+      display: block;
+      padding: 4px 10px;
+      background: $background-grey2;
+      border-radius: 4px;
+    }
+  }
+  .total_price {
+    margin-bottom: 32px;
+    span {
+      @include fsize_lheight_fwieght_color(20px, 27px, 600, $accent2);
+    }
+  }
+}

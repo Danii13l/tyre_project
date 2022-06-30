@@ -8,7 +8,7 @@ import { BreadCrumbs } from "./../../src/components/common_components/bread_crum
 
 import styles from "../../styles/pages/news/singleNews.module.scss";
 
-import img from "../../src/images/slide_examples/chair.jpg";
+import img from "../../src/images/fake_photo/balloon2.png";
 
 const SingleNews: NextPage = (): JSX.Element => {
   return (

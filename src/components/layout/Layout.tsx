@@ -5,7 +5,7 @@ import { Footer } from "../common_components/footer/Footer";
 
 import { StandardComponentProps } from "../../interfaces/StandardComponentProps";
 
-import { ShoppingCardSidebar } from "../common_components/shopping_card_sidebar/ShoppingCardSidebar";
+import { ShoppingCartSidebar } from "../common_components/shopping_cart_sidebar/ShoppingCartSidebar";
 
 import { useRouter } from "next/router";
 import { Account } from "./../account/Account";
@@ -22,7 +22,7 @@ export const Layout: FC<StandardComponentProps> = ({
       {/* <Account /> */}
 
       {/* {pathname !== "/admin" && <Footer />} */}
-      {/* <ShoppingCardSidebar /> */}
+      {/* <ShoppingCartSidebar /> */}
     </div>
   );
 };

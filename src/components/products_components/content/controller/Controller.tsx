@@ -24,6 +24,8 @@ export const Controller: FC = (): JSX.Element => {
           options={options}
           classNamePrefix="select_second"
           placeholder="Новинки"
+          id="sort_by"
+          instanceId="sort_by"
         />
         <div className={styles.controller_view}>
           <div

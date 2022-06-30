@@ -38,6 +38,7 @@ export const Login: FC = (): JSX.Element => {
             onBlur={formik.handleBlur}
             isError={formik.errors.phone}
             isTouched={formik.touched.phone}
+            value={formik.values.phone}
           />
         </div>
 

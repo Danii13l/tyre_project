@@ -1,0 +1,67 @@
+@import "../../../../styles/variables.module.scss";
+@import "../../../../styles/mixins.module.scss";
+
+.title {
+  @include fsize_lheight_fwieght_color(32px, 44px, 700, $accent);
+  margin-bottom: 55px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.shopping_card_order {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 81px;
+}
+
+.shopping_card_item {
+  margin-right: 105px;
+
+  @include dflex_jcontent_aitems(center, center);
+  flex-direction: column;
+
+  .order {
+    @include fsize_lheight_fwieght_color(24px, 33px, 600, $text2);
+    @include dflex_jcontent_aitems(center, center);
+    @include width_height(90px, 90px);
+    padding: 28px 31px;
+    border: 1px solid $text2;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    position: relative;
+
+    &::after {
+      content: "";
+      @include width_height(96px, 1px);
+      @include pos_absolute(50%, 113%, auto, auto);
+      background-color: $text2;
+    }
+  }
+
+  .text {
+    @include fsize_lheight_fwieght_color(16px, 22px, 600, $text2);
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    .order {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &.active {
+    .order {
+      @include fsize_lheight_fwieght_color(24px, 33px, 600, $accent);
+      border: 1px solid $accent;
+      &::after {
+        background-color: $accent;
+      }
+    }
+
+    .text {
+      @include fsize_lheight_fwieght_color(16px, 22px, 600, $accent);
+    }
+  }
+}

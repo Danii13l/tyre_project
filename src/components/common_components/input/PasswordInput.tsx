@@ -31,6 +31,7 @@ export const PasswordInput: FC<InputInt> = ({
           value={value}
           onChange={onChange}
           onBlur={onBlur}
+          autoComplete="on"
         />
         {showPassword ? (
           <span className={styles.img_password_wrapper}>

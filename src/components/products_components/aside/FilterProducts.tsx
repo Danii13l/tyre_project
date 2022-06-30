@@ -27,6 +27,8 @@ export const FilterProducts: FC = (): JSX.Element => {
             placehold="Все сезоны"
             labelText="Все сезоны"
             isLabel
+            id="seasons"
+            instanceId="seasons"
           />
         </div>
         <div className={styles.filter_select_wrapper}>
@@ -35,6 +37,8 @@ export const FilterProducts: FC = (): JSX.Element => {
             placehold="Все"
             labelText="Производитель"
             isLabel
+            id="company"
+            instanceId="company"
           />
         </div>
         <div className={styles.filter_select_wrapper}>
@@ -43,6 +47,8 @@ export const FilterProducts: FC = (): JSX.Element => {
             placehold="Все"
             labelText="Модель"
             isLabel
+            id="model"
+            instanceId="model"
           />
         </div>
       </div>
@@ -54,6 +60,8 @@ export const FilterProducts: FC = (): JSX.Element => {
             placehold="Все сезоны"
             labelText="Ширина"
             isLabel
+            id="width"
+            instanceId="witdh"
           />
         </div>
         <div className={styles.filter_select_wrapper}>
@@ -62,6 +70,8 @@ export const FilterProducts: FC = (): JSX.Element => {
             placehold="Все"
             labelText="Профиль"
             isLabel
+            id="sphere"
+            instanceId="sphere"
           />
         </div>
         <div className={styles.filter_select_wrapper}>
@@ -70,6 +80,8 @@ export const FilterProducts: FC = (): JSX.Element => {
             placehold="Все"
             labelText="Диаметр"
             isLabel
+            id="diameter"
+            instanceId="diameter"
           />
         </div>
       </div>

@@ -76,7 +76,7 @@ export const ChangeSettings: FC = (): JSX.Element => {
       phone: "",
     },
     validationSchema: schema,
-    onSubmit: (values) => alert(values),
+    onSubmit: (values) => console.log(values),
   });
 
   return (
@@ -145,6 +145,7 @@ export const ChangeSettings: FC = (): JSX.Element => {
             onBlur={formik.handleBlur}
             isError={formik.errors.phone}
             isTouched={formik.touched.phone}
+            value={formik.values.phone}
           />
         </div>
 

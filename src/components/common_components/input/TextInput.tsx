@@ -25,6 +25,7 @@ export const TextInput: FC<InputInt> = ({
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        autoComplete="on"
       />
       {isError && isTouched && <p className={styles.error}>{isError}</p>}
     </>
