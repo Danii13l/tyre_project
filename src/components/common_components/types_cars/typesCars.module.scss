@@ -32,20 +32,13 @@
 
   &.big {
     .link {
-      @include dflex_jcontent_aitems(center, center);
       @include fsize_lheight_fwieght_color(20px, 20px, 600, $accent);
       flex: 1;
       flex-direction: row;
-      padding: 8px 0;
-      background: #f2f2f2;
-      border-radius: 100px;
       margin-right: 15px;
+      margin-left: 0;
       &:last-child {
         margin-right: 0;
-      }
-      transition: 0.6s;
-      &:hover {
-        background: $light1;
       }
     }
 

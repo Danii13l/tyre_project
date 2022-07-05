@@ -600,6 +600,39 @@ h6 {
   }
 }
 
+// select language
+.language_select__control {
+  background: transparent !important;
+  border: none !important;
+
+  &:after {
+    content: "";
+    background: url("../src/images/navbar/select_arrow.svg") no-repeat;
+    @include width_height(15px, 10px);
+    position: relative;
+    margin-top: 3px;
+  }
+}
+
+.language_select__single-value {
+  font-size: 17px !important;
+  line-height: 17px !important;
+  font-weight: 400 !important;
+  color: $text2 !important;
+}
+
+.language_select__control.language_select__control--is-focused {
+  box-shadow: none !important;
+}
+
+.language_select__indicator-separator {
+  display: none;
+}
+
+.language_select__indicators {
+  display: none !important;
+}
+
 // pagination
 .pagination_bottom {
   ul {

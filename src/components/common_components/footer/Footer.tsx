@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { FC } from "react";
+import { FC, memo } from "react";
 
 import { Container } from "../container/Container";
 import { footerLinks } from "../../../constants/constFooter";
@@ -14,7 +14,9 @@ import phone from "../../../images/footer/phone-enabled.svg";
 import location from "../../../images/footer/location-on.svg";
 import email from "../../../images/footer/mail-outline.svg";
 
-export const Footer: FC = () => {
+export const Footer: FC = memo((): JSX.Element => {
+ 
+
   return (
     <footer className={styles.footer}>
       <Container>
@@ -100,4 +102,6 @@ export const Footer: FC = () => {
       </Container>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";

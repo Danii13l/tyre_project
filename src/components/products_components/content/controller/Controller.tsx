@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useCallback } from "react";
 
 import Select from "react-select";
 
@@ -10,12 +10,20 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
-export const Controller: FC = (): JSX.Element => {
+interface controllerInt {
+  handleView: (val: boolean) => () => void;
+}
+
+export const Controller: FC<controllerInt> = ({ handleView }): JSX.Element => {
   const [view, setView] = useState<number>(0);
 
-  const changeView = (num: number): (() => void) => {
-    return () => void setView(num);
-  };
+  const changeView = useCallback(
+    (num: number, view: boolean) => {
+      setView(num);
+      handleView(view)();
+    },
+    [handleView]
+  );
 
   return (
     <div className={styles.controller}>
@@ -32,7 +40,7 @@ export const Controller: FC = (): JSX.Element => {
             className={`${styles.controller_view_item} ${
               view === 0 ? styles.active : ""
             }`}
-            onClick={changeView(0)}
+            onClick={() => changeView(0, true)}
           >
             <svg
               width="32"
@@ -48,7 +56,7 @@ export const Controller: FC = (): JSX.Element => {
             className={`${styles.controller_view_item} ${
               view === 1 ? styles.active : ""
             }`}
-            onClick={changeView(1)}
+            onClick={() => changeView(1, false)}
           >
             <svg
               width="32"

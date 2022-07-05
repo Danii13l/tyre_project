@@ -4,7 +4,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { Container } from "../src/components/common_components/container/Container";
-import { Controller } from "../src/components/products_components/content/controller/Controller";
 import { HeaderProducts } from "./../src/components/products_components/top/HeaderProducts";
 import { FilterProducts } from "../src/components/products_components/aside/FilterProducts";
 import { Pagination } from "./../src/components/common_components/pagination/Pagination";
@@ -14,6 +13,8 @@ import { SubSection } from "../src/components/common_components/sub_section/SubS
 import styles from "../src/components/products_components/products.module.scss";
 
 const Products: NextPage = (): JSX.Element => {
+  console.log("rerender products");
+
   return (
     <div className={styles.products}>
       <Head>
@@ -28,7 +29,6 @@ const Products: NextPage = (): JSX.Element => {
           <FilterProducts />
 
           <div className={styles.content}>
-            <Controller />
             <ContentProducts />
             <Pagination initialPage={1} pageCount={70} />
           </div>

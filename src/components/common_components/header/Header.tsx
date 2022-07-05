@@ -18,7 +18,15 @@ import {
   bottomNavbarLinks,
 } from "../../../constants/constHeader";
 
-export const Header: FC = (): JSX.Element => {
+interface headerInt {
+  handleSideCart: (val: boolean) => () => void;
+  handleAccount: (val: boolean) => () => void;
+}
+
+export const Header: FC<headerInt> = ({
+  handleSideCart,
+  handleAccount,
+}): JSX.Element => {
   return (
     <header>
       <nav className={styles.navbar}>
@@ -59,7 +67,7 @@ export const Header: FC = (): JSX.Element => {
                         </li>
                       );
                     })}
-                    <li>Аккаунт</li>
+                    <li onClick={handleAccount(true)}>Аккаунт</li>
                     {/* <li>
                       <Link href="/cabinet" passHref>
                         <a className={styles.cabinet}>
@@ -90,7 +98,7 @@ export const Header: FC = (): JSX.Element => {
                   })}
                 </ul>
               </div>
-              <div className={styles.price_box}>
+              <div className={styles.price_box} onClick={handleSideCart(true)}>
                 <Image src={grocery} alt="local-grocery-store" />
                 <p className={styles.price}>1 400 000</p>
                 <p>сум</p>

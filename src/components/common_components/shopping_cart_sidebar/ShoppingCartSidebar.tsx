@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState, useEffect, useCallback, memo } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -72,38 +72,57 @@ const fakeData = [
   },
 ];
 
-export const ShoppingCartSidebar: FC = (): JSX.Element => {
-  return (
-    <div className={styles.shopping_sidebar}>
-      <div className={styles.shopping_inner}>
-        <h3 className={styles.title}>КОРЗИНА</h3>
-        <div className={styles.shopping_products}>
-          {fakeData.map((item) => {
-            return <ProductInCart key={item.id} {...item} />;
-          })}
-        </div>
-        <div className={styles.shopping_total}>
-          <p>
-            Общее количество: <span>{3}шт</span>
-          </p>
-          <p>
-            Общая сумма: <span>{"100 000 000"} сум</span>
-          </p>
-        </div>
-        <div className={styles.shopping_links}>
-          <ButtonMain text="В корзину" type="button" img={add_img} second />
+interface sidebarCart {
+  sideCart: boolean;
+  handleSideCart: (val: boolean) => () => void;
+}
 
-          <Link href="/">
-            <a>
-              <ButtonMain text="К оплате" type="button" img={to_pay} />
-            </a>
-          </Link>
-        </div>
+export const ShoppingCartSidebar: FC<sidebarCart> = memo(
+  ({ sideCart, handleSideCart }): JSX.Element => {
+    return (
+      <>
+        {sideCart && (
+          <div className={styles.shopping_sidebar}>
+            <div className={styles.bg}></div>
+            <div className={styles.shopping_inner}>
+              <h3 className={styles.title}>КОРЗИНА</h3>
+              <div className={styles.shopping_products}>
+                {fakeData.map((item) => {
+                  return <ProductInCart key={item.id} {...item} />;
+                })}
+              </div>
+              <div className={styles.shopping_total}>
+                <p>
+                  Общее количество: <span>{3}шт</span>
+                </p>
+                <p>
+                  Общая сумма: <span>{"100 000 000"} сум</span>
+                </p>
+              </div>
+              <div className={styles.shopping_links}>
+                <ButtonMain
+                  text="В корзину"
+                  type="button"
+                  img={add_img}
+                  second
+                />
 
-        <div className={styles.close}>
-          <Image src={close} alt="close" layout="fill" />
-        </div>
-      </div>
-    </div>
-  );
-};
+                <Link href="/">
+                  <a>
+                    <ButtonMain text="К оплате" type="button" img={to_pay} />
+                  </a>
+                </Link>
+              </div>
+
+              <div className={styles.close} onClick={handleSideCart(false)}>
+                <Image src={close} alt="close" layout="fill" />
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  }
+);
+
+ShoppingCartSidebar.displayName = "ShoppingCartSidebar";

@@ -1,3 +1,5 @@
+import { FC, useState } from "react";
+
 import { GridView } from "./grid_view/GridView";
 import { ListView } from "./list_view/ListView";
 
@@ -5,6 +7,7 @@ import { ListView } from "./list_view/ListView";
 import hg from "../../../images/fake_photo/HU.png";
 import balloon2 from "../../../images/fake_photo/balloon2.png";
 import season from "../../../images/fake_photo/seasons.svg";
+import { Controller } from "./controller/Controller";
 
 const fakeData = [
   {
@@ -137,11 +140,17 @@ const fakeData = [
   },
 ];
 
-export const ContentProducts = () => {
+export const ContentProducts: FC = (): JSX.Element => {
+  const [view, setView] = useState<boolean>(true);
+
+  const handleView = (val: boolean): (() => void) => {
+    return () => setView(val);
+  };
+
   return (
     <>
-      <ListView data={fakeData} />
-      {/* <GridView data={fakeData} /> */}
+      <Controller handleView={handleView} />
+      {view ? <GridView data={fakeData} /> : <ListView data={fakeData} />}
     </>
   );
 };

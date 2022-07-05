@@ -1,8 +1,10 @@
 import Image, { StaticImageData } from "next/image";
-import styles from "./bigCard.module.scss";
+import { FC } from "react";
 
 import { Rating } from "../rating/Rating";
 import { SeasonCountry } from "../season_country/SeasonCountry";
+
+import styles from "./bigCard.module.scss";
 
 import frame from "../../../images/common/big_card_frame.svg";
 
@@ -21,7 +23,7 @@ interface bigCardInt {
   price: string;
 }
 
-export const BigCard = ({
+export const BigCard: FC<bigCardInt> = ({
   id,
   title,
   size,
@@ -34,7 +36,7 @@ export const BigCard = ({
   isNew,
   rating,
   price,
-}: bigCardInt) => {
+}): JSX.Element => {
   return (
     <div className={styles.big_card}>
       <div className={styles.big_card_top}>

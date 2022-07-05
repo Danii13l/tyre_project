@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +18,10 @@ interface BreadCrumbsInt {
   last: string;
 }
 
-export const BreadCrumbs = ({ list, last }: BreadCrumbsInt) => {
+export const BreadCrumbs: FC<BreadCrumbsInt> = ({
+  list,
+  last,
+}): JSX.Element => {
   return (
     <div className={styles.bread_crumbs}>
       {list.map((item) => {
