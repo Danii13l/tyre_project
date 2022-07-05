@@ -13,6 +13,7 @@ import close from "../../images/icons/close_x.svg";
 
 export interface contextInt {
   chooseActiveBtn: (num: number, inOrForgot?: boolean) => void;
+  handleAccount: (val: boolean) => () => void;
 }
 
 export const ContextActivebtn = createContext<contextInt | null>(null);
@@ -80,7 +81,9 @@ export const Account: FC<accountInt> = memo(
                     <span>Регистрация</span>
                   </button>
                 </div>
-                <ContextActivebtn.Provider value={{ chooseActiveBtn }}>
+                <ContextActivebtn.Provider
+                  value={{ chooseActiveBtn, handleAccount }}
+                >
                   {activeBtn === 1 && <Login />}
                   {activeBtn === 2 && <ForgotPassword />}
                   {activeBtn === 3 && <Signin />}

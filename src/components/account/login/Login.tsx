@@ -16,7 +16,9 @@ import {
 import styles from "../account.module.scss";
 
 export const Login: FC = (): JSX.Element => {
-  const { chooseActiveBtn } = useContext(ContextActivebtn) as contextInt;
+  const { chooseActiveBtn, handleAccount } = useContext(
+    ContextActivebtn
+  ) as contextInt;
 
   const formik: FormikProps<phoneSPasswordInt> = useFormik<phoneSPasswordInt>({
     initialValues: {
