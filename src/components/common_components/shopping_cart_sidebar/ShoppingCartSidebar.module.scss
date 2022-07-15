@@ -104,7 +104,6 @@
 }
 
 .close {
-  @include width_height(32px, 32px);
   @include pos_absolute(32px, auto, auto, 32px);
   cursor: pointer;
 }

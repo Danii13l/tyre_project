@@ -4,9 +4,9 @@ import { NextPage } from "next";
 import Image from "next/image";
 
 import { Container } from "../../src/components/common_components/container/Container";
-import { BreadCrumbs } from "./../../src/components/common_components/bread_crumbs/BreadCrumbs";
+import { BreadCrumbs } from "../../src/components/common_components/bread_crumbs/BreadCrumbs";
 
-import styles from "../../styles/pages/news/singleNews.module.scss";
+import styles from "./singleNews.module.scss";
 
 import img from "../../src/images/fake_photo/balloon2.png";
 

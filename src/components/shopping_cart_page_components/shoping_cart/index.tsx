@@ -7,8 +7,6 @@ import { ProductInCart } from "../../common_components/product_in_cart/ProductIn
 
 import styles from "./shoppingCartIndex.module.scss";
 
-import pay from "../../../images/icons/to_pay.svg";
-
 // заменить any на типы
 
 export const ShoppingCartIndex: FC<any> = ({ data }): JSX.Element => {
@@ -34,7 +32,11 @@ export const ShoppingCartIndex: FC<any> = ({ data }): JSX.Element => {
 
         <Link href={"/shopping_cart/checkout"}>
           <a>
-            <ButtonMain type="button" text="К оплате" img={pay} />
+            <ButtonMain
+              type="button"
+              text="К оплате"
+              img="/images/common/to_pay.svg"
+            />
           </a>
         </Link>
       </div>

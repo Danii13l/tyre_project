@@ -3,9 +3,6 @@ import Image, { StaticImageData } from "next/image";
 
 import styles from "./productInCart.module.scss";
 
-import plus from "../../../images/icons/plus.svg";
-import minus from "../../../images/icons/minus.svg";
-
 interface ProductInCartInt {
   img: string | StaticImageData;
   name: string;
@@ -38,11 +35,21 @@ export const ProductInCart: FC<ProductInCartInt> = ({
         <p>Кол-во</p>
         <div className={styles.amount_inner}>
           <div className={styles.dec}>
-            <Image src={minus} alt="minus" />
+            <Image
+              src="/images/common/minus.svg"
+              alt="minus"
+              width={6}
+              height={2}
+            />
           </div>
           <div className={styles.amount_number}>{amount}</div>
           <div className={styles.inc}>
-            <Image src={plus} alt="plus" />
+            <Image
+              src="/images/common/plus.svg"
+              alt="plus"
+              width={6}
+              height={6}
+            />
           </div>
         </div>
       </div>

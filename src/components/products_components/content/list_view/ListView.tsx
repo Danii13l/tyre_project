@@ -5,8 +5,6 @@ import Image, { StaticImageData } from "next/image";
 import { Rating } from "../../../common_components/rating/Rating";
 import { SeasonCountry } from "../../../common_components/season_country/SeasonCountry";
 
-import frame from "../../../../images/common/big_card_frame.svg";
-
 import { FC } from "react";
 
 interface dataInt {
@@ -43,7 +41,12 @@ export const ListView: FC<any> = ({ data }): JSX.Element => {
               {item.isNew && <p className={styles.new}>НОВИНКА</p>}
 
               <div className={styles.frame_wrapper}>
-                <Image src={frame} alt="product" />
+                <Image
+                  src="/images/card_product/big_card_frame.svg"
+                  alt="product"
+                  layout="fill"
+                  objectFit="contain"
+                />
               </div>
             </div>
 

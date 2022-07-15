@@ -9,10 +9,6 @@ import Image from "next/image";
 
 import styles from "./header.module.scss";
 
-import logo from "../../../images/common/logo.svg";
-import search from "../../../images/navbar/search.svg";
-import grocery from "../../../images/navbar/local-grocery-store.svg";
-
 import {
   topNavbarLinks,
   bottomNavbarLinks,
@@ -35,7 +31,12 @@ export const Header: FC<headerInt> = ({
             <div className={styles.navbar_left_side}>
               <Link href="/" passHref>
                 <a className={styles.logo}>
-                  <Image src={logo} alt="logo" />
+                  <Image
+                    src="/images/common/logo.svg"
+                    alt="logo"
+                    width={60}
+                    height={25}
+                  />
                 </a>
               </Link>
               <form>
@@ -43,7 +44,7 @@ export const Header: FC<headerInt> = ({
                   <input type="text" />
                   <div className={styles.img_box}>
                     <Image
-                      src={search}
+                      src="/images/navbar/search.svg"
                       alt="search"
                       layout="fill"
                       className={styles.input_img}
@@ -99,12 +100,20 @@ export const Header: FC<headerInt> = ({
                 </ul>
               </div>
               <div className={styles.price_box} onClick={handleSideCart(true)}>
-                <Image src={grocery} alt="local-grocery-store" />
-                <p className={styles.price}>1 400 000</p>
-                <p>сум</p>
-                <div className={styles.price_amount}>
-                  <span>2</span>
+                <div className={styles.price_amount_wrapper}>
+                  <Image
+                    src="/images/navbar/local-grocery-store.svg"
+                    alt="local-grocery-store"
+                    width={24}
+                    height={24}
+                  />
+                  <div className={styles.price_amount}>
+                    <p>212</p>
+                  </div>
                 </div>
+
+                <p className={styles.price}>122 400 000</p>
+                <p>сум</p>
               </div>
             </div>
           </div>

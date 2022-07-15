@@ -1,12 +1,12 @@
 import React from "react";
 import { NextPage } from "next";
 
-import { Container } from "../src/components/common_components/container/Container";
-import { BreadCrumbs } from "../src/components/common_components/bread_crumbs/BreadCrumbs";
+import { Container } from "../../src/components/common_components/container/Container";
+import { BreadCrumbs } from "../../src/components/common_components/bread_crumbs/BreadCrumbs";
 
 import { AiFillEnvironment, AiFillPhone, AiOutlineMail } from "react-icons/ai";
 
-import styles from "../styles/pages/contacts/contacts.module.scss";
+import styles from "./contacts.module.scss";
 
 const Contacts: NextPage = (): JSX.Element => {
   return (

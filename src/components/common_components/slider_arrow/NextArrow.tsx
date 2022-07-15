@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import arrows from "../../../images/slider/arrow_slider_right.svg";
-
 export const NextArrow = (props: any) => {
   const { onClick, className } = props;
 

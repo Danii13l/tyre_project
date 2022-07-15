@@ -9,14 +9,7 @@ import { social } from "../../../constants/constSocial";
 
 import styles from "./footer.module.scss";
 
-import logo from "../../../images/common/logo.svg";
-import phone from "../../../images/footer/phone-enabled.svg";
-import location from "../../../images/footer/location-on.svg";
-import email from "../../../images/footer/mail-outline.svg";
-
 export const Footer: FC = memo((): JSX.Element => {
- 
-
   return (
     <footer className={styles.footer}>
       <Container>
@@ -24,7 +17,12 @@ export const Footer: FC = memo((): JSX.Element => {
           <div className={styles.footer_left_side}>
             <Link href="/" passHref>
               <a className={styles.logo}>
-                <Image src={logo} alt="logo" />
+                <Image
+                  src="/images/common/logo.svg"
+                  alt="logo"
+                  width={60}
+                  height={25}
+                />
               </a>
             </Link>
 
@@ -78,14 +76,24 @@ export const Footer: FC = memo((): JSX.Element => {
               <li>
                 <p> Connaugt Road Central Suite 18B, 148 New Yankee</p>
                 <span>
-                  <Image src={location} alt="icons" />
+                  <Image
+                    src="/images/footer/location-on.svg"
+                    alt="icons"
+                    width={18}
+                    height={18}
+                  />
                 </span>
               </li>
 
               <li>
                 <a href="tel:+15553332211"> +1 (555) 333 22 11</a>
                 <span>
-                  <Image src={phone} alt="icons" />
+                  <Image
+                    src="/images/footer/phone-enabled.svg"
+                    alt="icons"
+                    width={18}
+                    height={18}
+                  />
                 </span>
               </li>
 
@@ -93,7 +101,12 @@ export const Footer: FC = memo((): JSX.Element => {
                 <a href="mailto:info@boomerang.store">info@boomerang.store</a>
 
                 <span>
-                  <Image src={email} alt="icons" />
+                  <Image
+                    src="/images/footer/mail-outline.svg"
+                    alt="icons"
+                    width={18}
+                    height={18}
+                  />
                 </span>
               </li>
             </ul>

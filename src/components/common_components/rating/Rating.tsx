@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-import star_grey from "../../../images/rating/rating-grey.svg";
-import star_yellow from "../../../images/rating/rating-yellow.svg";
-
 import styles from "./rating.module.scss";
 
 interface ratingInt {
@@ -19,7 +16,11 @@ export const Rating = ({ num, style }: ratingInt) => {
         return (
           <span key={item} className={styles.rating}>
             <Image
-              src={num != null && item <= num ? star_yellow : star_grey}
+              src={
+                num != null && item <= num
+                  ? "/images/rating/rating-yellow.svg"
+                  : "/images/rating/rating-grey.svg"
+              }
               alt="rating"
               width={style ? 16 : 12}
               height={style ? 16 : 12}

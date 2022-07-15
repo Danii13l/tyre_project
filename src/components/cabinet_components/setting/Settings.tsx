@@ -8,14 +8,14 @@ import { Address } from "./setting_sub_components/Address";
 
 import styles from "./settings.module.scss";
 
-import personal_data from "../../../images/icons/personal_data.svg";
-import my_card from "../../../images/icons/my_card.svg";
-import address from "../../../images/icons/address_location.svg";
-
 const buttons = [
-  { id: 1, text: "Личные данные", img: personal_data },
-  { id: 2, text: "Моя карта", img: my_card },
-  { id: 3, text: "Адрес доставки", img: address },
+  { id: 1, text: "Личные данные", img: "/images/cabinet/personal_data.svg" },
+  { id: 2, text: "Моя карта", img: "/images/cabinet/my_card.svg" },
+  {
+    id: 3,
+    text: "Адрес доставки",
+    img: "/images/cabinet/address_location.svg",
+  },
 ];
 
 export const Settings = () => {

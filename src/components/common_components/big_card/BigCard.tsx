@@ -6,8 +6,6 @@ import { SeasonCountry } from "../season_country/SeasonCountry";
 
 import styles from "./bigCard.module.scss";
 
-import frame from "../../../images/common/big_card_frame.svg";
-
 interface bigCardInt {
   id: number;
   title: string;
@@ -62,7 +60,12 @@ export const BigCard: FC<bigCardInt> = ({
       </div>
 
       <div className={styles.frame}>
-        <Image src={frame} alt="country" />
+        <Image
+          src="/images/card_product/big_card_frame.svg"
+          alt="country"
+          layout="fill"
+          objectFit="contain"
+        />
       </div>
 
       <div className={styles.addTo}>

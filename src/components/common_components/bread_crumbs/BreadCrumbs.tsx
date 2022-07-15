@@ -5,8 +5,6 @@ import Link from "next/link";
 
 import styles from "./breadCrumbs.module.scss";
 
-import arrow from "../../../images/common/bread.svg";
-
 interface BreadCrumbslist {
   id: number;
   href: string;
@@ -31,7 +29,12 @@ export const BreadCrumbs: FC<BreadCrumbsInt> = ({
               <a>{item.text}</a>
             </Link>
             <span className={styles.img_wrapper}>
-              <Image src={arrow} alt="arrow" width={7} height={8} />
+              <Image
+                src="/images/breadcrumb/bread_arrow.svg"
+                alt="arrow"
+                width={7}
+                height={8}
+              />
             </span>
           </div>
         );

@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 
-import { TopAdmin } from "../src/components/admin/top/TopAdmin";
-import { AsideAdmin } from "./../src/components/admin/aside/asideAdmin";
+import { TopAdmin } from "../../src/components/admin/top/TopAdmin";
+import { AsideAdmin } from "../../src/components/admin/aside/asideAdmin";
 
-import styles from "../styles/pages/admin/admin.module.scss";
+import styles from "./admin.module.scss";
 
 const Admin: NextPage = (): JSX.Element => {
   return (

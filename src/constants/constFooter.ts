@@ -1,9 +1,3 @@
-import fbook from "../images/social/Facebook.svg";
-import inst from "../images/social/Instagram.svg";
-import tg from "../images/social/Telegram.svg";
-import wapp from "../images/social/WhatsApp.svg";
-import youtube from "../images/social/YouTube.svg";
-
 import { Url } from "url";
 
 interface imagesArray {
@@ -11,14 +5,6 @@ interface imagesArray {
   href: string | Url;
   img: string;
 }
-
-export const socialImages: imagesArray[] = [
-  { id: 1, href: "#!", img: fbook },
-  { id: 2, href: "#!", img: inst },
-  { id: 3, href: "#!", img: tg },
-  { id: 4, href: "#!", img: wapp },
-  { id: 5, href: "#!", img: youtube },
-];
 
 interface subLinks {
   href: string | Url;

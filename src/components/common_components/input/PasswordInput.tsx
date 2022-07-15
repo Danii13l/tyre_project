@@ -3,9 +3,6 @@ import Image from "next/image";
 
 import { InputInt } from "../../../interfaces/inputInterface";
 
-import open_eye from "../../../images/icons/open_eye.svg";
-import closed_eye from "../../../images/icons/closed_eye.svg";
-
 import styles from "./input.module.scss";
 
 export const PasswordInput: FC<InputInt> = ({
@@ -36,7 +33,7 @@ export const PasswordInput: FC<InputInt> = ({
         {showPassword ? (
           <span className={styles.img_password_wrapper}>
             <Image
-              src={open_eye}
+              src="/images/inputs/open_eye.svg"
               onClick={() => setShowPassword(!showPassword)}
               alt="eye"
               layout="fill"
@@ -45,7 +42,7 @@ export const PasswordInput: FC<InputInt> = ({
         ) : (
           <span className={styles.img_password_wrapper}>
             <Image
-              src={closed_eye}
+              src="/images/inputs/closed_eye.svg"
               onClick={() => setShowPassword(!showPassword)}
               alt="eye"
               layout="fill"

@@ -16,7 +16,7 @@
     position: relative;
     &:after {
       content: "";
-      background: url("../../../images/icons/active_triangle.svg") no-repeat;
+      background: url("/images/cabinet/active_triangle.svg") no-repeat;
       @include width_height(36px, 36px);
       @include pos_absolute(15%, auto, auto, -18%);
     }

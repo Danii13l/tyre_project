@@ -8,10 +8,7 @@ import { ProductInCart } from "../product_in_cart/ProductInCart";
 
 import styles from "./ShoppingCartSidebar.module.scss";
 
-import add_img from "../../../images/icons/add_to_card.svg";
-import to_pay from "../../../images/icons/to_pay.svg";
-import close from "../../../images/icons/close_x.svg";
-
+// fake
 import fakeImg from "../../../images/fake_photo/balloon2.png";
 
 const fakeData = [
@@ -103,19 +100,28 @@ export const ShoppingCartSidebar: FC<sidebarCart> = memo(
                 <ButtonMain
                   text="В корзину"
                   type="button"
-                  img={add_img}
+                  img="/images/common/add_to_cart.svg"
                   second
                 />
 
                 <Link href="/">
                   <a>
-                    <ButtonMain text="К оплате" type="button" img={to_pay} />
+                    <ButtonMain
+                      text="К оплате"
+                      type="button"
+                      img="/images/common/to_pay.svg"
+                    />
                   </a>
                 </Link>
               </div>
 
               <div className={styles.close} onClick={handleSideCart(false)}>
-                <Image src={close} alt="close" layout="fill" />
+                <Image
+                  src="/images/common/close_x.svg"
+                  alt="close"
+                  width={24}
+                  height={24}
+                />
               </div>
             </div>
           </div>

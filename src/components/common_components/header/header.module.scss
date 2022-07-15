@@ -116,13 +116,19 @@
     }
   }
 
+  .price_amount_wrapper {
+    position: relative;
+  }
+
   .price_amount {
-    @include pos_absolute(10px, auto, auto, 27px);
+    @include pos_absolute(-9px, auto, auto, -7px);
     font-size: 10px;
-    @include width_height(16px, 16px);
+    min-width: 16px;
+    height: 16px;
     background: #f15050;
-    padding: 4px 6px;
     border-radius: 100px;
+
     @include dflex_jcontent_aitems(center, center);
+    padding: 3px;
   }
 }

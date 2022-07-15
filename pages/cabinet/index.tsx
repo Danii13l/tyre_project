@@ -1,29 +1,34 @@
 import { useCallback, useState } from "react";
 import { NextPage } from "next";
 
-import { Container } from "../src/components/common_components/container/Container";
-import { ButtonsLeft } from "../src/components/cabinet_components/buttons_left/ButtonsLeft";
-import { Settings } from "../src/components/cabinet_components/setting/Settings";
-import { History } from "./../src/components/cabinet_components/history/History";
-import { Orders } from "./../src/components/cabinet_components/orders/Orders";
+import { Container } from "../../src/components/common_components/container/Container";
+import { ButtonsLeft } from "../../src/components/cabinet_components/buttons_left/ButtonsLeft";
+import { Settings } from "../../src/components/cabinet_components/setting/Settings";
+import { History } from "../../src/components/cabinet_components/history/History";
+import { Orders } from "../../src/components/cabinet_components/orders/Orders";
 
-import styles from "../styles/pages/cabinet/cabinet.module.scss";
-
-import ava from "../public/avatar.png";
-import history_pay from "../src/images/icons/history_pay.svg";
-import orders from "../src/images/icons/online_orders.svg";
-import exit from "../src/images/icons/exit.svg";
+import styles from "./cabinet.module.scss";
 
 const buttons = [
   {
     id: 1,
     text: ["Umid Hikmatov", "+998 (90) 900-90-90"],
     type: "button",
-    img: ava,
+    img: "/images/common/avatar.png",
   },
-  { id: 2, text: ["История платежей"], type: "button", img: history_pay },
-  { id: 3, text: ["Онлайн заказы"], type: "button", img: orders },
-  { id: 4, text: ["Выйти"], type: "link", img: exit },
+  {
+    id: 2,
+    text: ["История платежей"],
+    type: "button",
+    img: "/images/cabinet/history_pay.svg",
+  },
+  {
+    id: 3,
+    text: ["Онлайн заказы"],
+    type: "button",
+    img: "/images/cabinet/online_orders.svg",
+  },
+  { id: 4, text: ["Выйти"], type: "link", img: "/images/cabinet/exit.svg" },
 ];
 
 const Cabinet: NextPage = (): JSX.Element => {

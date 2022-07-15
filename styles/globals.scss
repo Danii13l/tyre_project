@@ -607,7 +607,7 @@ h6 {
 
   &:after {
     content: "";
-    background: url("../src/images/navbar/select_arrow.svg") no-repeat;
+    background: url("/images/navbar/select_arrow.svg") no-repeat;
     @include width_height(15px, 10px);
     position: relative;
     margin-top: 3px;

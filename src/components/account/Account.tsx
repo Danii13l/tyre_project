@@ -7,10 +7,6 @@ import { ForgotPassword } from "./forgotPassword/ForgotPassword";
 
 import styles from "./account.module.scss";
 
-import login from "../../images/icons/login.svg";
-import signin from "../../images/icons/sighin.svg";
-import close from "../../images/icons/close_x.svg";
-
 export interface contextInt {
   chooseActiveBtn: (num: number, inOrForgot?: boolean) => void;
   handleAccount: (val: boolean) => () => void;
@@ -57,7 +53,12 @@ export const Account: FC<accountInt> = memo(
                       }`}
                       onClick={() => chooseActiveBtn(1, true)}
                     >
-                      <Image src={login} alt="icon" width={28} height={28} />
+                      <Image
+                        src="/images/account/login.svg"
+                        alt="icon"
+                        width={28}
+                        height={28}
+                      />
                       <span>Войти</span>
                     </button>
                   ) : (
@@ -67,7 +68,12 @@ export const Account: FC<accountInt> = memo(
                       }`}
                       onClick={() => chooseActiveBtn(2)}
                     >
-                      <Image src={login} alt="icon" width={28} height={28} />
+                      <Image
+                        src="/images/account/login.svg"
+                        alt="icon"
+                        width={28}
+                        height={28}
+                      />
                       <span>Смена пароля</span>
                     </button>
                   )}
@@ -77,7 +83,12 @@ export const Account: FC<accountInt> = memo(
                     }`}
                     onClick={() => chooseActiveBtn(3)}
                   >
-                    <Image src={signin} alt="icon" width={28} height={28} />
+                    <Image
+                      src="/images/account/sighin.svg"
+                      alt="icon"
+                      width={28}
+                      height={28}
+                    />
                     <span>Регистрация</span>
                   </button>
                 </div>
@@ -94,7 +105,12 @@ export const Account: FC<accountInt> = memo(
                 className={styles.close_account}
                 onClick={handleAccount(false)}
               >
-                <Image src={close} alt="close" />
+                <Image
+                  src="/images/common/close_x.svg"
+                  alt="close"
+                  width={24}
+                  height={24}
+                />
               </div>
             </div>
           </div>

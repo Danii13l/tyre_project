@@ -6,7 +6,7 @@ import { BreadCrumbs } from "../../src/components/common_components/bread_crumbs
 import { Container } from "./../../src/components/common_components/container/Container";
 import { checkLength } from "./../../src/functions/checkLength";
 
-import styles from "../../styles/pages/news/news..module.scss";
+import styles from "./news..module.scss";
 
 import image from "../../src/images/fake_photo/balloon2.png";
 

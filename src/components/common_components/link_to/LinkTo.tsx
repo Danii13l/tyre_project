@@ -12,15 +12,18 @@ interface Props {
 
 import styles from "./linkTo.module.scss";
 
-import arrow_white from "../../../images/linkTo/Pagination__navigation-white.svg";
-
 export const LinkTo = ({ href, y, x, text }: Props) => {
   return (
     <Link href={href} passHref>
       <a className={`${styles.link_to} ${styles[y]} ${styles[x]}`}>
         {text}
         <span>
-          <Image src={arrow_white} alt="icon" />
+          <Image
+            src="/images/link_to/Pagination__navigation-white.svg"
+            alt="icon"
+            width={24}
+            height={24}
+          />
         </span>
       </a>
     </Link>

@@ -5,12 +5,13 @@
   position: absolute;
   z-index: 3;
 
-  @include dflex_jcontent_aitems(baseline, center);
-  @include fsize_lheight_fwieght_color(18px, 20px, 500, $white);
+  @include dflex_jcontent_aitems(stretch, center);
+  @include fsize_lheight_fwieght_color(18px, 0px, 500, $white);
   text-transform: uppercase;
 
   span {
     margin-left: 16px;
+    display: block;
     img {
       filter: brightness(100%);
     }
@@ -24,6 +25,7 @@
   bottom: 84px;
   @include fsize_lheight_fwieght_color(32px, 44px, 700, $white);
   text-transform: none;
+
   span {
     display: none;
   }

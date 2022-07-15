@@ -12,13 +12,6 @@ import Slider from "react-slick";
 
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 
-import favorite from "../src/images/icons/favorite.svg";
-import favorite2 from "../src/images/icons/favorite2.svg";
-import forum from "../src/images/icons/forum.svg";
-import share from "../src/images/icons/share.svg";
-import share2 from "../src/images/icons/share2.svg";
-import compare from "../src/images/icons/compare.svg";
-
 // fake
 import country from "../src/images/fake_photo/HU.png";
 import season from "../src/images/fake_photo/seasons.svg";
@@ -74,7 +67,7 @@ const Product: NextPage = (): JSX.Element => {
   const nextSlide = useCallback((): void => {
     if (indexSlide + 1 < images.length)
       setIndexSlide((state): number => state + 1);
-  }, [indexSlide]);
+  }, [images.length, indexSlide]);
 
   const prevSlide = useCallback((): void => {
     if (indexSlide - 1 >= 0) setIndexSlide((state): number => state - 1);
@@ -121,15 +114,30 @@ const Product: NextPage = (): JSX.Element => {
           <div className="detail_product_left">
             <div className="detail_product_left-social">
               <div className="detail_product_social_item">
-                <Image src={favorite} alt="icon" width={24} height={24} />
+                <Image
+                  src="/images/common/favorite.svg"
+                  alt="icon"
+                  width={24}
+                  height={24}
+                />
                 <span>{212}</span>
               </div>
               <div className="detail_product_social_item">
-                <Image src={forum} alt="icon" width={24} height={24} />
+                <Image
+                  src="/images/common/forum.svg"
+                  alt="icon"
+                  width={24}
+                  height={24}
+                />
                 <span>{212}</span>
               </div>
               <div className="detail_product_social_item">
-                <Image src={share} alt="icon" width={24} height={24} />
+                <Image
+                  src="/images/common/share.svg"
+                  alt="icon"
+                  width={24}
+                  height={24}
+                />
                 <span>{212}</span>
               </div>
             </div>
@@ -193,15 +201,22 @@ const Product: NextPage = (): JSX.Element => {
 
               <div className="detail_product_right-social">
                 <div className="detail_product_social_item">
-                  <Image src={share2} alt="icon" width={24} height={24} />{" "}
+                  <Image
+                    src="/images/common/share.svg"
+                    alt="icon"
+                    width={24}
+                    height={24}
+                  />
                   <span>поделиться</span>
                 </div>
+
                 <div className="detail_product_social_item">
-                  <Image src={compare} alt="icon" width={24} height={24} />{" "}
-                  <span>сравнить</span>
-                </div>
-                <div className="detail_product_social_item">
-                  <Image src={favorite2} alt="icon" width={24} height={24} />{" "}
+                  <Image
+                    src="/images/common/favorite2.svg"
+                    alt="icon"
+                    width={24}
+                    height={24}
+                  />{" "}
                   <span>в избранное</span>
                 </div>
               </div>

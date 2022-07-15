@@ -5,9 +5,6 @@ import Link from "next/link";
 
 import styles from "./typesCars.module.scss";
 
-import car_light from "../../../images/fake_photo/types_light.png";
-import car_cargo from "../../../images/fake_photo/types_cargo.png";
-
 interface typesCarsInt {
   isBig: boolean;
 }
@@ -26,21 +23,21 @@ const links: linksInt[] = [
     href: "#!",
     name: "Легковые шины",
     name2: "Легковые",
-    img: car_light,
+    img: "/images/types_cars/types_light.png",
   },
   {
     id: 2,
     href: "#!",
     name: "Грузовые шины",
     name2: "Грузовые",
-    img: car_cargo,
+    img: "/images/types_cars/types_cargo.png",
   },
   {
     id: 3,
     href: "#!",
     name: "Шины для Спецтехники",
     name2: "Спецтехника",
-    img: car_cargo,
+    img: "/images/types_cars/types_cargo.png",
   },
 ];
 
