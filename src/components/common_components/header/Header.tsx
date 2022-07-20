@@ -108,11 +108,11 @@ export const Header: FC<headerInt> = ({
                     height={24}
                   />
                   <div className={styles.price_amount}>
-                    <p>212</p>
+                    <p>2</p>
                   </div>
                 </div>
 
-                <p className={styles.price}>122 400 000</p>
+                <p className={styles.price}>0</p>
                 <p>сум</p>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { FC, useState, useEffect, useCallback, memo } from "react";
+import ReactDOM from "react-dom";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -67,6 +68,24 @@ const fakeData = [
     size: "225/55R17",
     amount: 2,
   },
+  {
+    id: 512,
+    img: fakeImg,
+    name: "Marvelous Modern 3 Seater",
+    price: "3 000 000",
+    quantity: 3,
+    size: "225/55R17",
+    amount: 2,
+  },
+  {
+    id: 126,
+    img: fakeImg,
+    name: "Marvelous Modern 3 Seater",
+    price: "34 000 000",
+    quantity: 3,
+    size: "225/55R17",
+    amount: 2,
+  },
 ];
 
 interface sidebarCart {
@@ -75,59 +94,69 @@ interface sidebarCart {
 }
 
 export const ShoppingCartSidebar: FC<sidebarCart> = memo(
-  ({ sideCart, handleSideCart }): JSX.Element => {
-    return (
-      <>
-        {sideCart && (
-          <div className={styles.shopping_sidebar}>
-            <div className={styles.bg}></div>
-            <div className={styles.shopping_inner}>
-              <h3 className={styles.title}>КОРЗИНА</h3>
-              <div className={styles.shopping_products}>
-                {fakeData.map((item) => {
-                  return <ProductInCart key={item.id} {...item} />;
-                })}
-              </div>
-              <div className={styles.shopping_total}>
-                <p>
-                  Общее количество: <span>{3}шт</span>
-                </p>
-                <p>
-                  Общая сумма: <span>{"100 000 000"} сум</span>
-                </p>
-              </div>
-              <div className={styles.shopping_links}>
-                <ButtonMain
-                  text="В корзину"
-                  type="button"
-                  img="/images/common/add_to_cart.svg"
-                  second
-                />
+  ({ sideCart, handleSideCart }): JSX.Element | null => {
+    const [isBrowser, setIsBrowser] = useState<boolean>(false);
 
-                <Link href="/">
-                  <a>
-                    <ButtonMain
-                      text="К оплате"
-                      type="button"
-                      img="/images/common/to_pay.svg"
-                    />
-                  </a>
-                </Link>
-              </div>
+    useEffect(() => {
+      setIsBrowser(true);
+    }, []);
 
-              <div className={styles.close} onClick={handleSideCart(false)}>
-                <Image
-                  src="/images/common/close_x.svg"
-                  alt="close"
-                  width={24}
-                  height={24}
-                />
+    if (isBrowser) {
+      return ReactDOM.createPortal(
+        <>
+          {sideCart && (
+            <div className={styles.shopping_sidebar}>
+              <div className={styles.bg}></div>
+              <div className={styles.shopping_inner}>
+                <h3 className={styles.title}>КОРЗИНА</h3>
+                <div className={styles.shopping_products}>
+                  {fakeData.map((item) => {
+                    return <ProductInCart key={item.id} {...item} />;
+                  })}
+                </div>
+                <div className={styles.shopping_total}>
+                  <p>
+                    Общее количество: <span>{3}шт</span>
+                  </p>
+                  <p>
+                    Общая сумма: <span>{"100 000 000"} сум</span>
+                  </p>
+                </div>
+                <div className={styles.shopping_links}>
+                  <ButtonMain
+                    text="В корзину"
+                    type="button"
+                    img="/images/common/add_to_cart.svg"
+                    second
+                  />
+
+                  <Link href="/">
+                    <a>
+                      <ButtonMain
+                        text="К оплате"
+                        type="button"
+                        img="/images/common/to_pay.svg"
+                      />
+                    </a>
+                  </Link>
+                </div>
+
+                <div className={styles.close} onClick={handleSideCart(false)}>
+                  <Image
+                    src="/images/common/close_x.svg"
+                    alt="close"
+                    width={24}
+                    height={24}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </>
-    );
+          )}
+        </>,
+        document.getElementById("shopping_card") as HTMLElement
+      );
+    }
+    return null;
   }
 );
 

@@ -27,7 +27,7 @@ export const Layout: FC<StandardComponentProps> = ({
   }, []);
 
   return (
-    <div>
+    <>
       {pathname !== "/admin" && (
         <Header handleSideCart={handleSideCart} handleAccount={handleAccount} />
       )}
@@ -38,6 +38,6 @@ export const Layout: FC<StandardComponentProps> = ({
       />
       {children}
       {pathname !== "/admin" && <Footer />}
-    </div>
+    </>
   );
 };
